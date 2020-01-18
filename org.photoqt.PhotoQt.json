@@ -1,7 +1,7 @@
 {
     "id": "org.photoqt.PhotoQt",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.11",
+    "runtime-version": "5.13",
     "sdk": "org.kde.Sdk",
     "command": "photoqt",
     "rename-desktop-file": "photoqt.desktop",
@@ -15,17 +15,33 @@
         "--device=dri",
         "--socket=pulseaudio"
     ],
-
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/doc",
+        "/share/man",
+        "*.a",
+        "*.la"
+    ],
     "modules": [
         {
             "name": "exiv2",
             "buildsystem": "cmake-ninja",
             "builddir": true,
+            "config-opts": [
+                "-DEXIV2_BUILD_SAMPLES=OFF",
+                "-DEXIV2_BUILD_EXIV2_COMMAND=OFF"
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man"
+            ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "http://www.exiv2.org/builds/exiv2-0.26-trunk.tar.gz",
-                    "sha256":"c75e3c4a0811bf700d92c82319373b7a825a2331c12b8b37d41eb58e4f18eafb"
+                    "type": "git",
+                    "url": "https://github.com/Exiv2/exiv2",
+                    "tag": "v0.26",
+                    "commit": "fa449a4d2c58d63f0d75ff259f25683a98a44630"
                 }
             ]
         },
@@ -35,9 +51,14 @@
             "config-opts": [ "--disable-examples"],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://www.libraw.org/data/LibRaw-0.18.11.tar.gz",
-                    "sha256":"7cf724a40a0d8915869498f51062a952167e4f5bae2b6920542c9e0e079a471d"
+                    "type": "git",
+                    "url": "https://github.com/LibRaw/LibRaw",
+                    "tag": "0.19.5",
+                    "commit": "beeb572687270d49c16734c9ca620982151dbeff"
+                },
+                {
+                    "type": "shell",
+                    "commands": [ "autoreconf -vfi" ]
                 }
             ]
         },
@@ -46,16 +67,20 @@
             "builddir": true,
             "config-opts": [
                 "--enable-shared",
+                "--disable-static",
                 "--with-modules",
                 "--with-perl",
                 "--with-quantum-depth=16",
                 "--with-threads"
             ],
+            "cleanup": [
+                "/bin/GraphicsMagick*config"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://ftp.icm.edu.pl/pub/unix/graphics/GraphicsMagick/1.3/GraphicsMagick-1.3.29.tar.gz",
-                    "sha256":"de820cd10597205941a7e9d02c2e679231e92e8e769c204ef09034d2279ad453"
+                    "url": "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.34/GraphicsMagick-1.3.34.tar.xz",
+                    "sha256":"df009d5173ed0d6a0c6457234256c5a8aeaace782afa1cbab015d5a12bd4f7a4"
                 }
             ]
         },
@@ -65,24 +90,34 @@
                 {
                     "name": "popplerdata",
                     "no-autogen": true,
-                    "make-install-args": ["prefix=/app"],
+                    "make-install-args": ["prefix=${FLATPAK_DEST}"],
+                    "cleanup": [
+                        "/share/pkgconfig"
+                    ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "http://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz",
+                            "url": "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz",
                             "sha256": "1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012"
                         }
                     ]
                 }
             ],
-            "config-opts": [ "-DENABLE_GOBJECT_INTROSPECTION=OFF", "-DENABLE_LIBOPENJPEG=none" ],
+            "config-opts": [
+                "-DENABLE_GOBJECT_INTROSPECTION=OFF",
+                "-DENABLE_LIBOPENJPEG=none",
+                "-DBUILD_GTK_TESTS=OFF",
+                "-DBUILD_QT5_TESTS=OFF",
+                "-DBUILD_CPP_TESTS=OFF",
+                "-DENABLE_UTILS=OFF"
+            ],
             "buildsystem": "cmake-ninja",
             "cleanup": [ "/bin" ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-0.65.0.tar.xz",
-                    "sha256": "89c8cf73f83efda78c5a9bd37c28f4593ad0e8a51556dbe39ed81e1ae2dd8f07"
+                    "url": "https://poppler.freedesktop.org/poppler-0.84.0.tar.xz",
+                    "sha256": "c7a130da743b38a548f7a21fe5940506fb1949f4ebdd3209f0e5b302fa139731"
                 }
             ]
         },
@@ -105,13 +140,13 @@
             "builddir": true,
             "build-commands": [
                 "make",
-                "install -D unrar /app/bin/unrar"
+                "install -D unrar ${FLATPAK_DEST}/bin/unrar"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.rarlab.com/rar/unrarsrc-5.6.4.tar.gz",
-                    "sha256":"9335d2201870f2034007c04be80e00f1dc23932cb88b329d55c76134e6ba49fe"
+                    "url": "https://www.rarlab.com/rar/unrarsrc-5.8.5.tar.gz",
+                    "sha256":"a725923a627bc8b3dd670a347b57701e1ad61f5f4e7b789d09244fb4b7f97b29"
                 }
             ]
         },
@@ -131,6 +166,7 @@
                 {
                     "type": "git",
                     "commit": "307efbc7b5ae94bc0825984e2f6fe34d2814166b",
+                    "tag": "v1.7.1",
                     "url": "https://gitlab.com/luspi/photoqt.git"
                 }
             ]
