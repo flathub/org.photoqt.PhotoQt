@@ -42,6 +42,17 @@
                     "url": "https://github.com/Exiv2/exiv2",
                     "tag": "v0.27.3",
                     "commit": "194bb65ac568a5435874c9d9d73b1c8a68e4edec"
+                },
+                /* fix for AARCH64 */
+                {
+                    "type": "file",
+                    "url": "https://sources.debian.org/data/main/e/exiv2/0.27.3-3/debian/patches/fcf-protection-only-on-x86.diff",
+                    "sha256": "42bf2587792092bbe8d4ef93d777cce258ca6c5040b739439570fdf03d9706b2",
+                    "dest-filename": "fix-exiv.diff"
+                },
+                {
+                    "type": "shell",
+                    "commands": [ "patch -p1 < fix-exiv.diff" ]
                 }
             ]
         },
