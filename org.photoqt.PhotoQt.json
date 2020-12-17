@@ -1,5 +1,5 @@
 {
-    "id": "org.photoqt.PhotoQt",
+    "id": "org.photoqt.photoqt",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.15",
     "sdk": "org.kde.Sdk",
