@@ -119,6 +119,7 @@
                 "-DENABLE_LIBOPENJPEG=none",
                 "-DBUILD_GTK_TESTS=OFF",
                 "-DBUILD_QT5_TESTS=OFF",
+                "-DBUILD_QT6_TESTS=OFF",
                 "-DBUILD_CPP_TESTS=OFF",
                 "-DENABLE_UTILS=OFF"
             ],
