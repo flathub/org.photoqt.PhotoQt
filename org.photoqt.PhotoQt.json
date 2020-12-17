@@ -108,8 +108,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz",
-                            "sha256": "1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012"
+                            "url": "https://poppler.freedesktop.org/poppler-data-0.4.10.tar.gz",
+                            "sha256": "6e2fcef66ec8c44625f94292ccf8af9f1d918b410d5aa69c274ce67387967b30"
                         }
                     ]
                 }
@@ -127,8 +127,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-20.09.0.tar.xz",
-                    "sha256": "4ed6eb5ddc4c37f2435c9d78ff9c7c4036455aea3507d1ce8400070aab745363"
+                    "url": "https://poppler.freedesktop.org/poppler-20.12.1.tar.xz",
+                    "sha256": "d0aa2586c0a4296c775f0d2045f28bb95a694113fc995f95350faa12930f7b35"
                 }
             ]
         },
@@ -146,34 +146,39 @@
             ]
         },
         {
+            "name": "pugixml",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/zeux/pugixml/releases/download/v1.11.2/pugixml-1.11.2.tar.gz",
+                    "sha256": "599eabdf8976aad86ac092a198920d8c127623d1376842bc6d683b12a37fb74f"
+                }
+            ]
+        },
+        {
             "name": "photoqt",
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DGM=ON",
+                "-DGRAPHICSMAGICK=ON",
                 "-DEXIV2=ON",
                 "-DRAW=ON",
                 "-DPOPPLER=ON",
                 "-DDEVIL=ON",
-                "-DFREEIMAGE=OFF"
+                "-DFREEIMAGE=OFF",
+                "-DPUGIXML=ON"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "commit": "307efbc7b5ae94bc0825984e2f6fe34d2814166b",
-                    "tag": "v1.7.1",
+                    "commit": "1b1d005e4ce89c7d166257d3491f3fa97d3ac006",
+                    "tag": "v2.0",
                     "url": "https://gitlab.com/luspi/photoqt.git"
-                },
-                /* fix for exiv 0.27 */
-                {
-                    "type": "file",
-                    "url": "https://gitlab.com/luspi/photoqt/commit/c6fd41478e818f3a651d40f96cab3d790e1c09a4.diff",
-                    "sha256": "11208acc93f563ac8d1b94161cc5d15d31a1b376faa3903a4ff7a633316ec3a4",
-                    "dest-filename": "fix-exiv.diff"
-                },
-                {
-                    "type": "shell",
-                    "commands": [ "patch -p1 < fix-exiv.diff" ]
                 }
             ]
         }
