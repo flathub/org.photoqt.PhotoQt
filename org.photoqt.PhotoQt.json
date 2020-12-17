@@ -1,5 +1,5 @@
 {
-    "id": "org.photoqt.photoqt",
+    "id": "org.photoqt.PhotoQt",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.15",
     "sdk": "org.kde.Sdk",
@@ -176,8 +176,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "commit": "1b1d005e4ce89c7d166257d3491f3fa97d3ac006",
-                    "tag": "v2.0",
+                    "commit": "c0992c7029340010838c16d7af44cf535580503f",
                     "url": "https://gitlab.com/luspi/photoqt.git"
                 }
             ]
