@@ -89,8 +89,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ImageMagick/ImageMagick",
-                    "tag": "7.0.10-60",
-                    "commit": "c04ba148f9af97163850031525a4b3a5b345b380"
+                    "tag": "7.0.11-14",
+                    "commit": "8792ac70e2e373032dba1e30168e4a4e3609ca28"
                 }
             ]
         },
@@ -179,7 +179,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "commit": "afc97815deedf43c1ef07ce299b7dbf3acf80a57",
+                    "commit": "5a17d5a126e93094cf0ce06992e66234eb8d3cb6",
                     "url": "https://gitlab.com/luspi/photoqt.git"
                 }
             ]
