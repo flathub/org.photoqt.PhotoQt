@@ -4,9 +4,6 @@
     "runtime-version": "5.15",
     "sdk": "org.kde.Sdk",
     "command": "photoqt",
-    "rename-desktop-file": "org.photoqt.photoqt.desktop",
-    "rename-appdata-file": "photoqt.appdata.xml",
-    "rename-icon": "photoqt",
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -40,8 +37,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Exiv2/exiv2",
-                    "tag": "v0.27.4",
-                    "commit": "15098f4ef50cc721ad0018218acab2ff06e60beb"
+                    "tag": "v0.27.5",
+                    "commit": "ad5484cb1eaba3ad0e49b290d244f6b1ee9ff076"
                 }
             ]
         },
@@ -78,8 +75,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ImageMagick/ImageMagick",
-                    "tag": "7.1.0-10",
-                    "commit": "32bf14aa2ddb63cc919cf2fcb88a47998622cb69"
+                    "tag": "7.1.0-19",
+                    "commit": "fe8039f5b40f8dde11a6524dc0530bfb785c5ee7"
                 }
             ]
         },
@@ -117,8 +114,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-21.10.0.tar.xz",
-                    "sha256": "964b5b16290fbec3fae57c2a5bcdea49bb0736bd750c3a3711c47995c9efc394"
+                    "url": "https://poppler.freedesktop.org/poppler-22.01.0.tar.xz",
+                    "sha256": "7d3493056b5b86413e5c693c2cae02c5c06cd8e618d14c2c31e2c84b67b2313e"
                 }
             ]
         },
@@ -164,12 +161,13 @@
                 "-DPOPPLER=ON",
                 "-DDEVIL=ON",
                 "-DFREEIMAGE=OFF",
-                "-DPUGIXML=ON"
+                "-DPUGIXML=ON",
+                "-DCHROMECAST=OFF"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "commit": "2fffa4cb9deaf5a5e99b417149ef08fac7f8db0b",
+                    "commit": "029562c916b603bd8a521f5211be875e0844ef6c",
                     "url": "https://gitlab.com/luspi/photoqt.git"
                 }
             ]
