@@ -167,7 +167,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "commit": "029562c916b603bd8a521f5211be875e0844ef6c",
+                    "commit": "65c528ec1a0bbfe2dc44d7c2fd20c43661308aa5",
                     "url": "https://gitlab.com/luspi/photoqt.git"
                 }
             ]
