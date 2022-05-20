@@ -1,7 +1,7 @@
 {
     "id": "org.photoqt.PhotoQt",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
+    "runtime-version": "5.15-21.08",
     "sdk": "org.kde.Sdk",
     "command": "photoqt",
     "finish-args": [
@@ -75,8 +75,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ImageMagick/ImageMagick",
-                    "tag": "7.1.0-19",
-                    "commit": "fe8039f5b40f8dde11a6524dc0530bfb785c5ee7"
+                    "tag": "7.1.0-35",
+                    "commit": "ff6dbbbec9cfac49f3a6217e51717139bde840ff"
                 }
             ]
         },
@@ -114,8 +114,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-22.01.0.tar.xz",
-                    "sha256": "7d3493056b5b86413e5c693c2cae02c5c06cd8e618d14c2c31e2c84b67b2313e"
+                    "url": "https://poppler.freedesktop.org/poppler-22.05.0.tar.xz",
+                    "sha256": "a969ced458e050d6202367bd7427054e2bd19bae39e8f969910d3b9151abf958"
                 }
             ]
         },
@@ -143,8 +143,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/zeux/pugixml",
-                    "tag": "v1.11.4",
-                    "commit": "08b3433180727ea2f78fe02e860a08471db1e03c"
+                    "tag": "v1.12.1",
+                    "commit": "dd50fa5b45ab8d58d6c27566c2eaf04a8b7e5841"
                 }
             ]
         },
