@@ -162,12 +162,14 @@
                 "-DDEVIL=ON",
                 "-DFREEIMAGE=OFF",
                 "-DPUGIXML=ON",
-                "-DCHROMECAST=OFF"
+                "-DCHROMECAST=OFF",
+                "-DLIBVIPS=OFF",
+                "-DLIBMPV=OFF"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "commit": "bd711efbc016ec6fea7831c10d80c577f371be3b",
+                    "commit": "5b58bdbec17c0e095399ad873b90a0b0fd3b2d02",
                     "url": "https://gitlab.com/luspi/photoqt.git"
                 }
             ]
