@@ -75,8 +75,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ImageMagick/ImageMagick",
-                    "tag": "7.1.0-44",
-                    "commit": "6cd515dee3010d6d5accfacb2a2943fdc8dc16f8"
+                    "tag": "7.1.0-47",
+                    "commit": "47c6f10607fd1b1e6e9226cd9869479902b65821"
                 }
             ]
         },
@@ -114,8 +114,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-22.07.0.tar.xz",
-                    "sha256": "420230c5c43782e2151259b3e523e632f4861342aad70e7e20b8773d9eaf3428"
+                    "url": "https://poppler.freedesktop.org/poppler-22.09.0.tar.xz",
+                    "sha256": "d7a8f748211359cadb774ba3e18ecda6464b34027045c0648eb30d5852a41e2e"
                 }
             ]
         },
@@ -169,7 +169,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "commit": "548dba48d118c9a677c7633b805f36a50079f927",
+                    "commit": "41d1aa8fb025401e73353d42f7fcf997a72a083b",
                     "url": "https://gitlab.com/lspies/photoqt.git"
                 }
             ]
