@@ -169,7 +169,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "commit": "41d1aa8fb025401e73353d42f7fcf997a72a083b",
+                    "commit": "d50a4ba037fdc364e27afa218c64a5a346cf1934",
                     "url": "https://gitlab.com/lspies/photoqt.git"
                 }
             ]
