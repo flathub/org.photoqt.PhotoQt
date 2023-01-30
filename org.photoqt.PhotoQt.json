@@ -1,7 +1,7 @@
 {
     "id": "org.photoqt.PhotoQt",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-21.08",
+    "runtime-version": "5.15-22.08",
     "sdk": "org.kde.Sdk",
     "command": "photoqt",
     "finish-args": [
@@ -37,8 +37,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Exiv2/exiv2",
-                    "tag": "v0.27.5",
-                    "commit": "ad5484cb1eaba3ad0e49b290d244f6b1ee9ff076"
+                    "tag": "v0.27.6",
+                    "commit": "c60285eb1a3027f5dcf742be0c6c064a74ad966c"
                 }
             ]
         },
@@ -50,8 +50,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/LibRaw/LibRaw",
-                    "tag": "0.20.2",
-                    "commit": "0209b6a2caec189e6d1a9b21c10e9e49f46e5a92"
+                    "tag": "0.21.1",
+                    "commit": "cccb97647fcee56801fa68231fa8a38aa8b52ef7"
                 },
                 {
                     "type": "shell",
@@ -75,8 +75,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ImageMagick/ImageMagick",
-                    "tag": "7.1.0-47",
-                    "commit": "47c6f10607fd1b1e6e9226cd9869479902b65821"
+                    "tag": "7.1.0-60",
+                    "commit": "212bed9bab497c0f738c0f11ded1f34656ff154e"
                 }
             ]
         },
@@ -114,8 +114,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-22.09.0.tar.xz",
-                    "sha256": "d7a8f748211359cadb774ba3e18ecda6464b34027045c0648eb30d5852a41e2e"
+                    "url": "https://poppler.freedesktop.org/poppler-23.01.0.tar.xz",
+                    "sha256": "fae9b88d3d5033117d38477b79220cfd0d8e252c278ec870ab1832501741fd94"
                 }
             ]
         },
@@ -143,8 +143,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/zeux/pugixml",
-                    "tag": "v1.12.1",
-                    "commit": "dd50fa5b45ab8d58d6c27566c2eaf04a8b7e5841"
+                    "tag": "v1.13",
+                    "commit": "a0e064336317c9347a91224112af9933598714e9"
                 }
             ]
         },
@@ -169,7 +169,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "commit": "d50a4ba037fdc364e27afa218c64a5a346cf1934",
+                    "commit": "74fc54ff15423a571d31c5dd7cb34d15d6f67ab5",
+                    "tag": "v3.0",
                     "url": "https://gitlab.com/lspies/photoqt.git"
                 }
             ]
