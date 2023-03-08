@@ -27,7 +27,8 @@
             "builddir": true,
             "config-opts": [
                 "-DEXIV2_BUILD_SAMPLES=OFF",
-                "-DEXIV2_BUILD_EXIV2_COMMAND=OFF"
+                "-DEXIV2_BUILD_EXIV2_COMMAND=OFF",
+                "-DEXIV2_ENABLE_BMFF=ON"
             ],
             "cleanup": [
                 "/bin",
@@ -75,8 +76,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ImageMagick/ImageMagick",
-                    "tag": "7.1.0-60",
-                    "commit": "212bed9bab497c0f738c0f11ded1f34656ff154e"
+                    "tag": "7.1.0-62",
+                    "commit": "32ce406898b6f9992103cc0ee353f31a0e83f063"
                 }
             ]
         },
@@ -93,8 +94,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz",
-                            "sha256": "2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c"
+                            "url": "https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz",
+                            "sha256": "c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74"
                         }
                     ]
                 }
@@ -114,8 +115,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-23.01.0.tar.xz",
-                    "sha256": "fae9b88d3d5033117d38477b79220cfd0d8e252c278ec870ab1832501741fd94"
+                    "url": "https://poppler.freedesktop.org/poppler-23.03.0.tar.xz",
+                    "sha256": "b04148bf849c1965ada7eff6be4685130e3a18a84e0cce73bf9bc472ec32f2b4"
                 }
             ]
         },
@@ -169,8 +170,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "commit": "74fc54ff15423a571d31c5dd7cb34d15d6f67ab5",
-                    "tag": "v3.0",
+                    "tag": "v3.1",
+                    "commit": "28244e39aac2a9cd49a1621bae8562d9d652c620",
                     "url": "https://gitlab.com/lspies/photoqt.git"
                 }
             ]
