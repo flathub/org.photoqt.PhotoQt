@@ -115,8 +115,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-23.03.0.tar.xz",
-                    "sha256": "b04148bf849c1965ada7eff6be4685130e3a18a84e0cce73bf9bc472ec32f2b4"
+                    "url": "https://poppler.freedesktop.org/poppler-23.05.0.tar.xz",
+                    "sha256": "38294de7149ebe458191a6e6d0e2837da7dba8683900a635252f6d0ee235f990"
                 }
             ]
         },
@@ -165,13 +165,13 @@
                 "-DPUGIXML=ON",
                 "-DCHROMECAST=OFF",
                 "-DLIBVIPS=OFF",
-                "-DLIBMPV=OFF"
+                "-DVIDEO_MPV=OFF"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "tag": "v3.1",
-                    "commit": "28244e39aac2a9cd49a1621bae8562d9d652c620",
+                    "commit": "4b59236efe5f9b4beb15a3f0765bea0b2f28fc56",
+                    "tag": "v3.2",
                     "url": "https://gitlab.com/lspies/photoqt.git"
                 }
             ]
