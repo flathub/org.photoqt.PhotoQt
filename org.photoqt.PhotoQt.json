@@ -26,6 +26,7 @@
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
+                "-DEXIV2_ENABLE_INIH=OFF",
                 "-DEXIV2_BUILD_SAMPLES=OFF",
                 "-DEXIV2_BUILD_EXIV2_COMMAND=OFF",
                 "-DEXIV2_ENABLE_BMFF=ON"
@@ -38,8 +39,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Exiv2/exiv2",
-                    "tag": "v0.27.6",
-                    "commit": "c60285eb1a3027f5dcf742be0c6c064a74ad966c"
+                    "tag": "v0.28.0",
+                    "commit": "931a40a746f5678dcc4625b06a2eb25fa4f00b34"
                 }
             ]
         },
@@ -76,8 +77,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ImageMagick/ImageMagick",
-                    "tag": "7.1.0-62",
-                    "commit": "32ce406898b6f9992103cc0ee353f31a0e83f063"
+                    "tag": "7.1.1-11",
+                    "commit": "11ffa6eb4548644a718158daa286295ed3174054"
                 }
             ]
         },
@@ -115,8 +116,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-23.05.0.tar.xz",
-                    "sha256": "38294de7149ebe458191a6e6d0e2837da7dba8683900a635252f6d0ee235f990"
+                    "url": "https://poppler.freedesktop.org/poppler-23.06.0.tar.xz",
+                    "sha256": "d38c6b2f31c8f6f3727fb60a011a0e6c567ebf56ef1ccad36263ca9ed6448a65"
                 }
             ]
         },
@@ -170,8 +171,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "commit": "4b59236efe5f9b4beb15a3f0765bea0b2f28fc56",
-                    "tag": "v3.2",
+                    "commit": "b3e63d90d921c12b89cf57b8f8228ab769f6ce31",
+                    "tag": "v3.3",
                     "url": "https://gitlab.com/lspies/photoqt.git"
                 }
             ]
