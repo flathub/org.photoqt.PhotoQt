@@ -6,7 +6,7 @@
     "command": "photoqt",
     "finish-args": [
         "--share=ipc",
-        "--socket=wayland",
+        "--socket=x11",
         "--filesystem=host",
         "--device=dri",
         "--socket=pulseaudio"
