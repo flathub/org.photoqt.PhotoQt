@@ -76,8 +76,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ImageMagick/ImageMagick",
-                    "tag": "7.1.1-19",
-                    "commit": "99da019efe78c44808f2a1c88684e7822a1fd692"
+                    "tag": "7.1.1-21",
+                    "commit": "58d86e4e107603a95f2f35da99540a2eb69b458d"
                 }
             ]
         },
@@ -116,8 +116,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://poppler.freedesktop.org/poppler-23.10.0.tar.xz",
-                    "sha256": "31a3dfdea79f4922402d313737415a44d44dc14d6b317f959a77c5bba0647dd9"
+                    "url": "https://poppler.freedesktop.org/poppler-23.11.0.tar.xz",
+                    "sha256": "f99cca6799cb9cb6c92fc1e0eb78547b611cb733750ab7cb047cb0e6c246539c"
                 }
             ]
         },
