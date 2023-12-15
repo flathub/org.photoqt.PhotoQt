@@ -1,6 +1,6 @@
 app-id: org.photoqt.PhotoQt
 runtime: org.kde.Platform
-runtime-version: 5.15-22.08
+runtime-version: 6.6
 sdk: org.kde.Sdk
 command: photoqt
 finish-args:
@@ -34,7 +34,6 @@ modules:
         - type: git
           url: https://github.com/Exiv2/exiv2
           tag: v0.28.1
-          commit: 5c91bfc8b5bd2227bf0e2a6607feb85a4020064e
     ########################
     - name: libraw
       builddir: true
@@ -43,7 +42,6 @@ modules:
         - type: git
           url: https://github.com/LibRaw/LibRaw
           tag: 0.21.1
-          commit: cccb97647fcee56801fa68231fa8a38aa8b52ef7
         - type: shell
           commands: ["autoreconf -vfi"]
     ########################
@@ -60,38 +58,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          tag: 7.1.1-21
-          commit: 58d86e4e107603a95f2f35da99540a2eb69b458d
-    ########################
-    - name: popplerdata
-      # no-autogen: true
-      # make-install-args: prefix="$FLATPAK_DEST"
-      # cleanup: /share/pkgconfig
-      buildsystem: cmake-ninja
-      builddir: true
-      config-opts: "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-      sources:
-        - type: archive
-          url: https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz
-          sha256: c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74
-    ########################
-    - name: poppler
-      config-opts:
-        - -DENABLE_GOBJECT_INTROSPECTION=OFF
-        - -DENABLE_LIBOPENJPEG=none
-        - -DBUILD_GTK_TESTS=OFF
-        - -DBUILD_QT5_TESTS=OFF
-        - -DBUILD_QT6_TESTS=OFF
-        - -DENABLE_QT6=OFF
-        - -DBUILD_CPP_TESTS=OFF
-        - -DENABLE_UTILS=OFF
-        - -DENABLE_BOOST=OFF
-      buildsystem: cmake-ninja
-      cleanup: /bin
-      sources:
-        - type: archive
-          url: https://poppler.freedesktop.org/poppler-23.11.0.tar.xz
-          sha256: f99cca6799cb9cb6c92fc1e0eb78547b611cb733750ab7cb047cb0e6c246539c
+          tag: 7.1.1-23
     ########################
     - name: devil
       buildsystem: cmake-ninja
@@ -111,7 +78,6 @@ modules:
         - type: git
           url: https://github.com/zeux/pugixml
           tag: v1.14
-          commit: db78afc2b7d8f043b4bc6b185635d949ea2ed2a8
     ########################
     - name: photoqt
       buildsystem: cmake-ninja
@@ -122,7 +88,8 @@ modules:
         - -DEXIV2=ON
         - -DLIBARCHIVE=ON
         - -DRAW=ON
-        - -DPOPPLER=ON
+        - -DPOPPLER=OFF
+        - -DQTPDF=OFF
         - -DDEVIL=ON
         - -DFREEIMAGE=OFF
         - -DPUGIXML=ON
@@ -131,10 +98,7 @@ modules:
         - -DVIDEO_MPV=OFF
       sources:
         - type: git
-          commit: 4c3a536abe5b3b800a73b688e0eab428aec337f8
-          tag: v3.4
           url: https://gitlab.com/lspies/photoqt.git
+          tag: v4.0.1
         - type: patch
-          path: exiv2.patch
-
-
+          path: iconsize.patch
