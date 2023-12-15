@@ -100,3 +100,5 @@ modules:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
           tag: v4.0
+        - type: patch
+          path: iconsize.patch
