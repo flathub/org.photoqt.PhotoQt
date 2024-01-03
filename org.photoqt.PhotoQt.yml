@@ -1,6 +1,6 @@
 app-id: org.photoqt.PhotoQt
 runtime: org.kde.Platform
-runtime-version: 6.6
+runtime-version: '6.6'
 sdk: org.kde.Sdk
 command: photoqt
 finish-args:
@@ -10,19 +10,15 @@ finish-args:
     - --filesystem=host
     - --device=dri
     - --socket=pulseaudio
-cleanup:
-    - /include
-    - /lib/pkgconfig
-    - /share/doc
-    - /share/man
-    - '*.a'
-    - '*.la'
 modules:
+    ########################
+    # EXIV2
     ########################
     - name: exiv2
       buildsystem: cmake-ninja
       builddir: true
       config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
         - -DEXIV2_ENABLE_INIH=OFF
         - -DEXIV2_BUILD_SAMPLES=OFF
         - -DEXIV2_BUILD_EXIV2_COMMAND=OFF
@@ -34,71 +30,346 @@ modules:
         - type: git
           url: https://github.com/Exiv2/exiv2
           tag: v0.28.1
+
+    ########################
+    # RAW SUPPORT
     ########################
     - name: libraw
       builddir: true
-      config-opts: --disable-examples
+      config-opts:
+        - --disable-examples
       sources:
         - type: git
           url: https://github.com/LibRaw/LibRaw
           tag: 0.21.1
         - type: shell
           commands: ["autoreconf -vfi"]
+
     ########################
-    - name: imagemagick
-      builddir: true
+    # HEIF SUPPORT
+    ########################
+    - name: libde265
+      buildsystem: cmake-ninja
       config-opts:
-        - --enable-shared
-        - --disable-static
-        - --disable-docs
-        - --with-modules
-        - --with-threads
-        - --with-png
-      cleanup: /bin/GraphicsMagick*config
+        - -DCMAKE_BUILD_TYPE=Release
       sources:
         - type: git
-          url: https://github.com/ImageMagick/ImageMagick
-          tag: 7.1.1-23
+          url: https://github.com/strukturag/libde265
+          tag: v1.0.15
+    ########################
+    - name: libheif
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DWITH_DAV1D=ON
+        - -DWITH_RAV1E=ON
+      sources:
+        - type: git
+          url: https://github.com/strukturag/libheif
+          tag: v1.17.6
+
+    ########################
+    # AVIF SUPPORT
+    ########################
+    - name: libavif
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DAVIF_CODEC_AOM=ON
+        - -DAVIF_CODEC_DAV1D=ON
+        - -DAVIF_CODEC_AOM=ON
+      sources:
+        - type: git
+          url: https://github.com/AOMediaCodec/libavif
+          tag: v1.0.3
+
+    ########################
+    # JXL SUPPORT
+    ########################
+    - name: libjxl
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DBUILD_TESTING=OFF
+      sources:
+        - type: git
+          url: https://github.com/libjxl/libjxl
+          tag: v0.9.0
+
+    ########################
+    # EXR SUPPORT
+    ########################
+    - name: libdeflate
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+      sources:
+        - type: git
+          url: https://github.com/ebiggers/libdeflate
+          tag: v1.18
+    ########################
+    - name: imath
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+      sources:
+        - type: git
+          url: https://github.com/AcademySoftwareFoundation/Imath
+          tag: v3.1.9
+    ########################
+    - name: openexr
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+      sources:
+        - type: git
+          url: https://github.com/AcademySoftwareFoundation/openexr
+          tag: v3.2.1
+
+    ########################
+    # POPPLER DOCUMENTS
+    ########################
+    - name: poppler-data
+      buildsystem: cmake-ninja
+      builddir: true
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+      sources:
+        - type: git
+          url: https://gitlab.freedesktop.org/poppler/poppler-data
+          tag: POPPLER_DATA_0_4_12
+    ########################
+    - name: boost
+      buildsystem: simple
+      build-commands:
+        - ./bootstrap.sh
+        - ./b2 install --prefix="$FLATPAK_DEST"
+      sources:
+        - type: archive
+          url: https://archives.boost.io/release/1.84.0/source/boost_1_84_0.tar.gz
+          sha256: a5800f405508f5df8114558ca9855d2640a2de8f0445f051fa1c7c3383045724
+    ########################
+    - name: openjpeg
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DBUILD_STATIC_LIBS=OFF
+      sources:
+        - type: git
+          url: https://github.com/uclouvain/openjpeg
+          tag: v2.5.0
+    ########################
+    - name: poppler
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DENABLE_GOBJECT_INTROSPECTION=OFF
+        - -DENABLE_LIBOPENJPEG=openjpeg2
+        - -DBUILD_GTK_TESTS=OFF
+        - -DBUILD_QT5_TESTS=OFF
+        - -DBUILD_QT6_TESTS=OFF
+        - -DENABLE_QT5=OFF
+        - -DENABLE_QT6=ON
+        - -DBUILD_CPP_TESTS=OFF
+        - -DENABLE_UTILS=ON
+        - -DENABLE_BOOST=ON
+      sources:
+        - type: git
+          url: https://gitlab.freedesktop.org/poppler/poppler
+          tag: poppler-24.01.0
+
+    ########################
+    # KDE IMAGE FORMATS
+    ########################
+    - name: extra-cmake-modules
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DBUILD_TESTING=OFF
+      sources:
+        - type: git
+          url: https://invent.kde.org/frameworks/extra-cmake-modules.git
+          tag: v5.247.0
+    ########################
+    - name: kimageformats
+      buildsystem: cmake-ninja
+      builddir: true
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DBUILD_TESTING=OFF
+        - -DKIMAGEFORMATS_HEIF=ON
+        - -DKIMAGEFORMATS_JXL=ON
+      sources:
+        - type: git
+          url: https://invent.kde.org/frameworks/kimageformats.git
+          tag: v5.247.0
+
+    ########################
+    # DEVIL IMAGE LIBRARY
     ########################
     - name: devil
       buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
       subdir: DevIL
       builddir: true
       sources:
         - type: archive
           url: https://sourceforge.net/projects/openil/files/DevIL/1.8.0/DevIL-1.8.0.tar.gz
           sha256: 0075973ee7dd89f0507873e2580ac78336452d29d34a07134b208f44e2feb709
+
+    ########################
+    # XML SUPPORT
     ########################
     - name: pugixml
       buildsystem: cmake-ninja
       builddir: true
       config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
         - -DBUILD_TESTING=OFF
       sources:
         - type: git
           url: https://github.com/zeux/pugixml
           tag: v1.14
+
+    ########################
+    # MPV SUPPORT
+    ########################
+    - name: glslang
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DGLSLANG_TESTS=OFF
+        - -DENABLE_OPT=OFF
+      sources:
+        - type: git
+          url: https://github.com/KhronosGroup/glslang
+          tag: 14.0.0
+    ########################
+    - name: libplacebo
+      buildsystem: meson
+      config-opts:
+        - -Dtests=false
+        - -Dvulkan=enabled
+        - -Dglslang=enabled
+        - -Dlcms=enabled
+        - -Dd3d11=disabled
+        - -Ddemos=false
+      sources:
+        - type: git
+          url: https://github.com/haasn/libplacebo
+          tag: v6.338.1
+    ########################
+    - name: libass
+      buildsystem: autotools
+      sources:
+        - type: git
+          url: https://github.com/libass/libass
+          tag: 0.17.1
+    ########################
+    - name: libmpv
+      buildsystem: meson
+      config-opts:
+        - -Dlibmpv=true
+        - -Dcaca=disabled
+        - -Dcdda=disabled
+        - -Ddvbin=disabled
+        - -Ddvdnav=disabled
+        - -Dlibarchive=disabled
+        - -Dopenal=disabled
+      sources:
+        - type: git
+          url: https://github.com/mpv-player/mpv
+          tag: v0.37.0
+
+    ########################
+    # MAGICK HAPPENS HERE
+    ########################
+    # - name: libjpeg-turbo
+    #   buildsystem: cmake-ninja
+    #   config-opts:
+    #     - -DCMAKE_BUILD_TYPE=Release
+    #     - -DENABLE_STATIC=OFF
+    #   sources:
+    #     - type: git
+    #       url: https://github.com/libjpeg-turbo/libjpeg-turbo
+    #       tag: 3.0.1
+    # ########################
+    # - name: libpng
+    #   buildsystem: cmake-ninja
+    #   config-opts:
+    #     - -DCMAKE_BUILD_TYPE=Release
+    #     - -DPNG_STATIC=OFF
+    #     - -DPNG_TESTS=OFF
+    #     - -DPNG_TOOLS=OFF
+    #   sources:
+    #     - type: git
+    #       url: https://github.com/glennrp/libpng
+    #       tag: v1.6.40
+    ########################
+    - name: imagemagick
+      builddir: true
+      build-options:
+        env:
+          LD_LIBRARY_PATH: /app/lib
+          PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
+      config-opts:
+        - --prefix=/app
+        - --enable-shared
+        - --disable-static
+        - --disable-docs
+        - --with-modules
+        - --with-threads
+        - --with-png
+        - --enable-hdri
+        - --enable-opencl
+        - --with-djvu
+        - --with-fftw
+        - --with-jxl
+        - --with-lqr
+        - --with-modules
+        - --with-openexr
+        - --with-openjp2
+        - --with-rsvg
+        - --with-webp
+        - --with-wmf
+        - --with-xml
+        - --with-dps
+        - --with-fpx
+        - --with-gvc
+      sources:
+        - type: git
+          url: https://github.com/ImageMagick/ImageMagick
+          tag: 7.1.1-25 # when changing the version number make sure to update patch file accordingly
+
+    ########################
     ########################
     - name: photoqt
       buildsystem: cmake-ninja
       builddir: true
       config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
         - -DIMAGEMAGICK=ON
         - -DGRAPHICSMAGICK=OFF
         - -DEXIV2=ON
         - -DLIBARCHIVE=ON
         - -DRAW=ON
-        - -DPOPPLER=OFF
+        - -DPOPPLER=ON
         - -DQTPDF=OFF
         - -DDEVIL=ON
         - -DFREEIMAGE=OFF
         - -DPUGIXML=ON
         - -DCHROMECAST=OFF
         - -DLIBVIPS=OFF
-        - -DVIDEO_MPV=OFF
+        - -DVIDEO_MPV=ON
+        - -DEXIV2_ENABLE_BMFF=ON
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
           tag: v4.1
         - type: patch
           path: iconsize.patch
+        - type: patch
+          path: poppler.patch
+        - type: patch
+          path: magick.patch
