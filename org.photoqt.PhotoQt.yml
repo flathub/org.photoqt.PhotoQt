@@ -94,7 +94,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/libjxl/libjxl
-          tag: v0.9.0
+          tag: v0.9.1
 
     ########################
     # EXR SUPPORT
@@ -106,7 +106,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/ebiggers/libdeflate
-          tag: v1.18
+          tag: v1.19
     ########################
     - name: imath
       buildsystem: cmake-ninja
@@ -189,7 +189,7 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          tag: v5.247.0
+          tag: v5.248.0
     ########################
     - name: kimageformats
       buildsystem: cmake-ninja
@@ -202,7 +202,7 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/kimageformats.git
-          tag: v5.247.0
+          tag: v5.248.0
 
     ########################
     # DEVIL IMAGE LIBRARY
@@ -231,6 +231,19 @@ modules:
         - type: git
           url: https://github.com/zeux/pugixml
           tag: v1.14
+          
+    ########################
+    # ffmpegthumbnailer
+    ########################
+    - name: ffmpegthumbnailer
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DENABLE_TESTS=OFF
+      sources:
+        - type: git
+          url: https://github.com/dirkvdb/ffmpegthumbnailer
+          branch: master
 
     ########################
     # MPV SUPPORT
@@ -285,28 +298,15 @@ modules:
     ########################
     # MAGICK HAPPENS HERE
     ########################
-    # - name: libjpeg-turbo
-    #   buildsystem: cmake-ninja
-    #   config-opts:
-    #     - -DCMAKE_BUILD_TYPE=Release
-    #     - -DENABLE_STATIC=OFF
-    #   sources:
-    #     - type: git
-    #       url: https://github.com/libjpeg-turbo/libjpeg-turbo
-    #       tag: 3.0.1
-    # ########################
-    # - name: libpng
-    #   buildsystem: cmake-ninja
-    #   config-opts:
-    #     - -DCMAKE_BUILD_TYPE=Release
-    #     - -DPNG_STATIC=OFF
-    #     - -DPNG_TESTS=OFF
-    #     - -DPNG_TOOLS=OFF
-    #   sources:
-    #     - type: git
-    #       url: https://github.com/glennrp/libpng
-    #       tag: v1.6.40
-    ########################
+    - name: ghostscript
+      config-opts:
+        - --prefix=/app
+        - --enable-shared
+        - --disable-static
+      sources:
+        - type: archive
+          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10021/ghostscript-10.02.1.tar.gz
+          sha256: e429e4f5b01615a4f0f93a4128e8a1a4d932dff983b1774174c79c0630717ad9
     - name: imagemagick
       builddir: true
       build-options:
@@ -340,7 +340,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          tag: 7.1.1-25 # when changing the version number make sure to update patch file accordingly
+          tag: 7.1.1-26 # when changing the version number make sure to update patch file accordingly
 
     ########################
     ########################
@@ -366,10 +366,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          tag: v4.1
+          tag: v4.2
         - type: patch
           path: iconsize.patch
-        - type: patch
-          path: poppler.patch
         - type: patch
           path: magick.patch
