@@ -41,7 +41,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/LibRaw/LibRaw
-          tag: 0.21.1
+          tag: 0.21.2
         - type: shell
           commands: ["autoreconf -vfi"]
 
@@ -231,7 +231,7 @@ modules:
         - type: git
           url: https://github.com/zeux/pugixml
           tag: v1.14
-          
+
     ########################
     # ffmpegthumbnailer
     ########################
@@ -271,7 +271,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/haasn/libplacebo
-          tag: v6.338.1
+          tag: v6.338.2
     ########################
     - name: libass
       buildsystem: autotools
@@ -307,6 +307,7 @@ modules:
         - type: archive
           url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10021/ghostscript-10.02.1.tar.gz
           sha256: e429e4f5b01615a4f0f93a4128e8a1a4d932dff983b1774174c79c0630717ad9
+    ########################
     - name: imagemagick
       builddir: true
       build-options:
@@ -340,7 +341,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          tag: 7.1.1-26 # when changing the version number make sure to update patch file accordingly
+          tag: 7.1.1-27 # when changing the version number make sure to update patch file accordingly
 
     ########################
     ########################
