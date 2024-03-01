@@ -29,7 +29,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/Exiv2/exiv2
-          tag: v0.28.1
+          tag: v0.28.2
 
     ########################
     # RAW SUPPORT
@@ -81,7 +81,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/AOMediaCodec/libavif
-          tag: v1.0.3
+          tag: v1.0.4
 
     ########################
     # JXL SUPPORT
@@ -94,7 +94,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/libjxl/libjxl
-          tag: v0.9.1
+          tag: v0.10.1
 
     ########################
     # EXR SUPPORT
@@ -115,7 +115,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/Imath
-          tag: v3.1.9
+          tag: v3.1.11
     ########################
     - name: openexr
       buildsystem: cmake-ninja
@@ -124,7 +124,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/openexr
-          tag: v3.2.1
+          tag: v3.2.2
 
     ########################
     # POPPLER DOCUMENTS
@@ -157,7 +157,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/uclouvain/openjpeg
-          tag: v2.5.0
+          tag: v2.5.2
     ########################
     - name: poppler
       buildsystem: cmake-ninja
@@ -176,7 +176,7 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          tag: poppler-24.01.0
+          tag: poppler-24.02.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -189,7 +189,7 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          tag: v5.248.0
+          tag: v6.0.0
     ########################
     - name: kimageformats
       buildsystem: cmake-ninja
@@ -202,7 +202,7 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/kimageformats.git
-          tag: v5.248.0
+          tag: v6.0.0
 
     ########################
     # DEVIL IMAGE LIBRARY
@@ -341,7 +341,21 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          tag: 7.1.1-27 # when changing the version number make sure to update patch file accordingly
+          tag: 7.1.1-29 # when changing the version number make sure to update patch file accordingly
+
+    ########################
+    # ZXING-CPP
+    ########################
+    - name: zxing-cpp
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DBUILD_WRITERS=OFF
+        - -DBUILD_EXAMPLES=OFF
+      sources:
+        - type: git
+          url: https://github.com/zxing-cpp/zxing-cpp
+          tag: v2.2.1
 
     ########################
     ########################
@@ -364,13 +378,14 @@ modules:
         - -DLIBVIPS=OFF
         - -DVIDEO_MPV=ON
         - -DEXIV2_ENABLE_BMFF=ON
+        - -DZXING=ON
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          tag: v4.2
+          tag: v4.3
         - type: patch
           path: iconsize.patch
         - type: patch
           path: magick.patch
         - type: patch
-          path: motion.patch
+          path: metainfo.patch
