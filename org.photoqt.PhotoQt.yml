@@ -387,3 +387,5 @@ modules:
           path: iconsize.patch
         - type: patch
           path: magick.patch
+        - type: patch
+          path: metainfo.patch
