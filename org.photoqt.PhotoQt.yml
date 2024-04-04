@@ -29,6 +29,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/Exiv2/exiv2
+          commit: 04207b9c39bf7b3b1a7144f7ed4e4f16b4f29ef6
           tag: v0.28.2
 
     ########################
@@ -41,9 +42,11 @@ modules:
       sources:
         - type: git
           url: https://github.com/LibRaw/LibRaw
+          commit: 1ef70158d7fde1ced6aaddb0b9443c32a7121d3d
           tag: 0.21.2
         - type: shell
-          commands: ["autoreconf -vfi"]
+          commands:
+            - "autoreconf -vfi"
 
     ########################
     # HEIF SUPPORT
@@ -55,6 +58,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/strukturag/libde265
+          commit: 17bb8d9fcea62db8cdeb0fc7ef8d15dbd19a22e4
           tag: v1.0.15
     ########################
     - name: libheif
@@ -66,6 +70,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/strukturag/libheif
+          commit: 59b58566de0d8e2e9fea958abeba1d3346bda9de
           tag: v1.17.6
 
     ########################
@@ -81,6 +86,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/AOMediaCodec/libavif
+          commit: d77cfece0b3e233ee4bed49dfef1e7dc451599f8
           tag: v1.0.4
 
     ########################
@@ -94,7 +100,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/libjxl/libjxl
-          tag: v0.10.1
+          commit: e1489592a770b989303b0edc5cc1dc447bbe0515
+          tag: v0.10.2
 
     ########################
     # EXR SUPPORT
@@ -106,7 +113,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ebiggers/libdeflate
-          tag: v1.19
+          commit: 275aa5141db6eda3587214e0f1d3a134768f557d
+          tag: v1.20
     ########################
     - name: imath
       buildsystem: cmake-ninja
@@ -115,6 +123,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/Imath
+          commit: 5ac1d5335cb34f0f356c5f2461a57c845b96b115
           tag: v3.1.11
     ########################
     - name: openexr
@@ -124,7 +133,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/openexr
-          tag: v3.2.2
+          commit: a1a00ffeecf627bbbc010d40700720bee48b2af7
+          tag: v3.2.4
 
     ########################
     # POPPLER DOCUMENTS
@@ -137,6 +147,7 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler-data
+          commit: af9f452b427d5ce8abe81ff98cc40c5f39fad90b
           tag: POPPLER_DATA_0_4_12
     ########################
     - name: boost
@@ -148,16 +159,6 @@ modules:
         - type: archive
           url: https://archives.boost.io/release/1.84.0/source/boost_1_84_0.tar.gz
           sha256: a5800f405508f5df8114558ca9855d2640a2de8f0445f051fa1c7c3383045724
-    ########################
-    - name: openjpeg
-      buildsystem: cmake-ninja
-      config-opts:
-        - -DCMAKE_BUILD_TYPE=Release
-        - -DBUILD_STATIC_LIBS=OFF
-      sources:
-        - type: git
-          url: https://github.com/uclouvain/openjpeg
-          tag: v2.5.2
     ########################
     - name: poppler
       buildsystem: cmake-ninja
@@ -176,7 +177,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          tag: poppler-24.02.0
+          commit: 0aa1fe5c30a6c467c91bad8d81bd6c2f57fcb726
+          tag: poppler-24.04.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -189,6 +191,7 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
+          commit: a97a3e5897a34ae5ef495bc88a762c5c1d789d24
           tag: v6.0.0
     ########################
     - name: kimageformats
@@ -230,6 +233,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/zeux/pugixml
+          commit: db78afc2b7d8f043b4bc6b185635d949ea2ed2a8
           tag: v1.14
 
     ########################
@@ -257,7 +261,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/KhronosGroup/glslang
-          tag: 14.0.0
+          commit: ee2f5d09eaf8f4e8d0d598bd2172fce290d4ca60
+          tag: 14.1.0
     ########################
     - name: libplacebo
       buildsystem: meson
@@ -271,6 +276,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/haasn/libplacebo
+          commit: 64c1954570f1cd57f8570a57e51fb0249b57bb90
           tag: v6.338.2
     ########################
     - name: libass
@@ -278,6 +284,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/libass/libass
+          commit: e8ad72accd3a84268275a9385beb701c9284e5b3
           tag: 0.17.1
     ########################
     - name: libmpv
@@ -293,6 +300,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/mpv-player/mpv
+          commit: 818ce7c51a6b9179307950e919983e0909942098
           tag: v0.37.0
 
     ########################
@@ -300,22 +308,17 @@ modules:
     ########################
     - name: ghostscript
       config-opts:
-        - --prefix=/app
         - --enable-shared
         - --disable-static
       sources:
         - type: archive
-          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10021/ghostscript-10.02.1.tar.gz
-          sha256: e429e4f5b01615a4f0f93a4128e8a1a4d932dff983b1774174c79c0630717ad9
+          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/ghostscript-10.03.0.tar.gz
+          sha256: 6f2bc61023469fcf7c7c2d7f1bdd75b75f2b41836aa1d5e641396246d4abbb59
     ########################
     - name: imagemagick
       builddir: true
       build-options:
-        env:
-          LD_LIBRARY_PATH: /app/lib
-          PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
       config-opts:
-        - --prefix=/app
         - --enable-shared
         - --disable-static
         - --disable-docs
@@ -341,6 +344,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
+          commit: 0deac72ed480ac2ec8e9d766c15ddb3bca055952
           tag: 7.1.1-29 # when changing the version number make sure to update patch file accordingly
 
     ########################
@@ -355,6 +359,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/zxing-cpp/zxing-cpp
+          commit: 99a83b3a6ac514d7f850dda7fa24cddb5120c7e2
           tag: v2.2.1
 
     ########################
@@ -379,13 +384,9 @@ modules:
         - -DVIDEO_MPV=ON
         - -DEXIV2_ENABLE_BMFF=ON
         - -DZXING=ON
+        - -DFLATPAKBUILD=ON
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          tag: v4.3
-        - type: patch
-          path: iconsize.patch
-        - type: patch
-          path: magick.patch
-        - type: patch
-          path: metainfo.patch
+          commit: 06b276d01fd1a49566f3083e6cfe177b56990679
+          tag: v4.4
