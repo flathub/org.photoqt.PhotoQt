@@ -158,8 +158,8 @@ modules:
         - ./b2 install --prefix="$FLATPAK_DEST"
       sources:
         - type: archive
-          url: https://archives.boost.io/release/1.84.0/source/boost_1_84_0.tar.gz
-          sha256: a5800f405508f5df8114558ca9855d2640a2de8f0445f051fa1c7c3383045724
+          url: https://archives.boost.io/release/1.85.0/source/boost_1_85_0.tar.gz
+          sha256: be0d91732d5b0cc6fbb275c7939974457e79b54d6f07ce2e3dfdd68bef883b0b
     ########################
     - name: poppler
       buildsystem: cmake-ninja
@@ -178,8 +178,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: 0aa1fe5c30a6c467c91bad8d81bd6c2f57fcb726
-          tag: poppler-24.04.0
+          commit: 14191296ae72398638d2a4af67d783ee120a998c
+          tag: poppler-24.05.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -192,8 +192,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          commit: a97a3e5897a34ae5ef495bc88a762c5c1d789d24
-          tag: v6.0.0
+          commit: 30f066c5f0295239b0b335a62c0c97e979313a7e
+          tag: v6.2.0
     ########################
     - name: kimageformats
       buildsystem: cmake-ninja
@@ -206,7 +206,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/kimageformats.git
-          tag: v6.0.0
+          commit: 5b2c190823e0fea896038f5a1ef638df16e7650b
+          tag: v6.2.0
 
     ########################
     # DEVIL IMAGE LIBRARY
@@ -262,8 +263,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/KhronosGroup/glslang
-          commit: ee2f5d09eaf8f4e8d0d598bd2172fce290d4ca60
-          tag: 14.1.0
+          commit: e8dd0b6903b34f1879520b444634c75ea2deedf5
+          tag: 14.2.0
     ########################
     - name: libplacebo
       buildsystem: meson
@@ -301,8 +302,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/mpv-player/mpv
-          commit: 818ce7c51a6b9179307950e919983e0909942098
-          tag: v0.37.0
+          commit: 02254b92dd237f03aa0a151c2a68778c4ea848f9
+          tag: v0.38.0
 
     ########################
     # MAGICK HAPPENS HERE
@@ -345,8 +346,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: 0deac72ed480ac2ec8e9d766c15ddb3bca055952
-          tag: 7.1.1-29 # when changing the version number make sure to update patch file accordingly
+          commit: 178bb329c7b80314711b036bd1c37107df76a6bc
+          tag: 7.1.1-32 # when changing the version number make sure to update patch file accordingly
 
     ########################
     # ZXING-CPP
@@ -389,5 +390,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 1d13cb31b6cb6785cd2b32c6206150dd13c9dbe5
-          tag: v4.4
+          commit: a5aed8c2bd3e653a77fe6d87cd03fddc7a3bed6a
+          tag: v4.5
