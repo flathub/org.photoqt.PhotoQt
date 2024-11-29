@@ -16,7 +16,7 @@ add-extensions:
   org.freedesktop.Platform.ffmpeg-full:
     directory: lib/ffmpeg
     add-ld-path: .
-    versions: '24.08;23.08'
+    versions: '24.08;23.08;22.08'
     no-autodownload: false
     autodelete: false
 cleanup-commands:
@@ -85,8 +85,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/strukturag/libheif
-          commit: bf8c7fb115aebc288d379c1b190eb615574f22f0
-          tag: v1.19.1
+          commit: cd95b113d78d0696105a9e678cbd19487ee13d6c
+          tag: v1.19.5
 
     ########################
     # AVIF SUPPORT
@@ -98,7 +98,7 @@ modules:
       sources:
         - type: git
           url: https://chromium.googlesource.com/libyuv/libyuv/
-          commit: 4cd90347e78ff76755df2107009e900374aee9cd
+          commit: 9a9752134e251b8ac5980cf847ba141e408da138
     - name: libavif
       buildsystem: cmake-ninja
       config-opts:
@@ -123,8 +123,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/libjxl/libjxl
-          commit: 4df1e9eccdf86b8df4c0c7c08f529263906f9c4f
-          tag: v0.11.0
+          commit: 794a5dcf0d54f9f0b20d288a12e87afb91d20dfc
+          tag: v0.11.1
 
     ########################
     # EXR SUPPORT
@@ -156,8 +156,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/openexr
-          commit: f723c3940fff287c0a26b425b90a8e764823bfd4
-          tag: v3.3.1
+          commit: 55d1a1404cec5b4b187009d9f7fe55a5622ac4e5
+          tag: v3.3.2
 
     ########################
     # POPPLER DOCUMENTS
@@ -214,8 +214,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          commit: 8f6acc46a49c626c5276b7d1965ffe3c407ae1ad
-          tag: v6.7.0
+          commit: 02e39e9538d3699e470194c989f7047efe44d2cc
+          tag: v6.8.0
     ########################
     - name: kimageformats
       buildsystem: cmake-ninja
@@ -228,8 +228,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/kimageformats.git
-          commit: fee0165bef5f901dc2a3987662fb39aa160d2408
-          tag: v6.7.0
+          commit: 799ac37660635961db6203a0105d0f6fc860105e
+          tag: v6.8.0
 
     ########################
     # DEVIL IMAGE LIBRARY
@@ -369,8 +369,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: 18ae55523a3b901081fa21cce7ca559ee81b7276
-          tag: 7.1.1-39
+          commit: bbdcbf78a67b0d4e2cf26e2a37c6d806b9ad3a13
+          tag: 7.1.1-41
 
     ########################
     # ZXING-CPP
@@ -413,5 +413,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: ca86637997029694be4fea548917131737c108da
-          tag: v4.6
+          commit: 0672077c4af11cb57246212a1ce42c5fc1e08c29
+          tag: v4.7
