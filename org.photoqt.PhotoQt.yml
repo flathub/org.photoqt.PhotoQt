@@ -16,7 +16,7 @@ add-extensions:
   org.freedesktop.Platform.ffmpeg-full:
     directory: lib/ffmpeg
     add-ld-path: .
-    versions: '24.08;23.08;22.08'
+    versions: '23.08;24.08'
     no-autodownload: false
     autodelete: false
 cleanup-commands:
