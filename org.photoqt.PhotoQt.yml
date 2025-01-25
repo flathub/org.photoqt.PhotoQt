@@ -98,7 +98,7 @@ modules:
       sources:
         - type: git
           url: https://chromium.googlesource.com/libyuv/libyuv/
-          commit: 9a9752134e251b8ac5980cf847ba141e408da138
+          commit: 26277baf96fd95bf6efa4abab82775bde9bc5ccb
     - name: libavif
       buildsystem: cmake-ninja
       config-opts:
@@ -136,8 +136,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ebiggers/libdeflate
-          commit: 2335c047e91cac6fd04cb0fd2769380395149f15
-          tag: v1.22
+          commit: 78051988f96dc8d8916310d8b24021f01bd9e102
+          tag: v1.23
     ########################
     - name: imath
       buildsystem: cmake-ninja
@@ -180,8 +180,8 @@ modules:
         - ./b2 install --prefix="$FLATPAK_DEST"
       sources:
         - type: archive
-          url: https://archives.boost.io/release/1.86.0/source/boost_1_86_0.tar.gz
-          sha256: 2575e74ffc3ef1cd0babac2c1ee8bdb5782a0ee672b1912da40e5b4b591ca01f
+          url: https://archives.boost.io/release/1.87.0/source/boost_1_87_0.tar.gz
+          sha256: f55c340aa49763b1925ccf02b2e83f35fdcf634c9d5164a2acb87540173c741d
     ########################
     - name: poppler
       buildsystem: cmake-ninja
@@ -200,8 +200,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: 735fb475f7b7793c3827d3b3090356503e99075c
-          tag: poppler-24.11.0
+          commit: 3ead1238555ce14dd0c619f1097d552307e6e40a
+          tag: poppler-25.01.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -214,8 +214,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          commit: 02e39e9538d3699e470194c989f7047efe44d2cc
-          tag: v6.8.0
+          commit: 7dd28cc56c339c3f8fb356f7c53c0e8f61433d81
+          tag: v6.10.0
     ########################
     - name: kimageformats
       buildsystem: cmake-ninja
@@ -228,8 +228,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/kimageformats.git
-          commit: 799ac37660635961db6203a0105d0f6fc860105e
-          tag: v6.8.0
+          commit: f49704b2dfbfa5c5f892475254d114eab88dc833
+          tag: v6.10.0
 
     ########################
     # DEVIL IMAGE LIBRARY
@@ -257,8 +257,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/zeux/pugixml
-          commit: db78afc2b7d8f043b4bc6b185635d949ea2ed2a8
-          tag: v1.14
+          commit: ee86beb30e4973f5feffe3ce63bfa4fbadf72f38
+          tag: v1.15
 
     ########################
     # ffmpegthumbnailer
@@ -286,8 +286,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/KhronosGroup/glslang
-          commit: 46ef757e048e760b46601e6e77ae0cb72c97bd2f
-          tag: 15.0.0
+          commit: 1062752a891c95b2bfeed9e356562d88f9df84ac
+          tag: 15.1.0
     ########################
     - name: libplacebo
       buildsystem: meson
@@ -325,8 +325,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/mpv-player/mpv
-          commit: 02254b92dd237f03aa0a151c2a68778c4ea848f9
-          tag: v0.38.0
+          commit: a0fba7be57f3822d967b04f0f6b6d6341e7516e7
+          tag: v0.39.0
 
     ########################
     # MAGICK HAPPENS HERE
@@ -369,8 +369,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: bbdcbf78a67b0d4e2cf26e2a37c6d806b9ad3a13
-          tag: 7.1.1-41
+          commit: a2d96f40e707ba54b57e7d98c3277d3ea6611ace
+          tag: 7.1.1-43
 
     ########################
     # ZXING-CPP
@@ -384,8 +384,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/zxing-cpp/zxing-cpp
-          commit: 99a83b3a6ac514d7f850dda7fa24cddb5120c7e2
-          tag: v2.2.1
+          commit: d6068bcebeb8fd9f0d35a99b00d202be86a14dbe
+          tag: v2.3.0
 
     ########################
     ########################
@@ -413,5 +413,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 0672077c4af11cb57246212a1ce42c5fc1e08c29
-          tag: v4.7
+          commit: 72f3c2eca3a5e23be82b6ed88f37cb96dcc4c814
+          tag: v4.8
