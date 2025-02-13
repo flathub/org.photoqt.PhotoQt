@@ -200,8 +200,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: 3ead1238555ce14dd0c619f1097d552307e6e40a
-          tag: poppler-25.01.0
+          commit: 71fea5bed8a4c047c2063245ba1c5560b071ee25
+          tag: poppler-25.02.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -413,5 +413,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 72f3c2eca3a5e23be82b6ed88f37cb96dcc4c814
-          tag: v4.8
+          commit: c4951f5aa9af6475a2a5fd3544aa9b1c49118988
+          tag: v4.8.1
