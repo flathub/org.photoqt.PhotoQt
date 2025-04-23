@@ -356,5 +356,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 57227f4207f45abaf01c4ab14e2c34a7733c363a
+          commit: 87e76b04af625a7f48a2c1f125010c149678a737
           tag: v4.9
