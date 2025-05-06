@@ -144,8 +144,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: a0f064e8393d0f9dc62d630f08d2c961b37c5a27
-          tag: poppler-25.04.0
+          commit: 6dd9782d8391f112ef9743ba13614f1d858ce9f2
+          tag: poppler-25.05.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -230,8 +230,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/KhronosGroup/glslang
-          commit: 99ee11b0106b48f06fb9e2a324ba928b8316cc33
-          tag: 15.2.0
+          commit: fc9889c889561c5882e83819dcaffef5ed45529b
+          tag: 15.3.0
     ########################
     - name: libplacebo
       buildsystem: meson
@@ -281,8 +281,8 @@ modules:
         - --disable-static
       sources:
         - type: archive
-          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/ghostscript-10.05.0.tar.gz
-          sha256: 56e77833de683825c420d0af8cb90aa8ba7da71ea6fb5624290cbc1b53fe7942
+          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostscript-10.05.1.tar.gz
+          sha256: 121861b6d29b2461dec6575c9f3cab665b810bd408d4ec02c86719fa708b0a49
     ########################
     - name: imagemagick
       builddir: true
@@ -356,5 +356,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 87e76b04af625a7f48a2c1f125010c149678a737
-          tag: v4.9
+          commit: d59cbf061eec93adc8b1ce611dbae9f5f6c851c5
+          tag: v4.9.1
