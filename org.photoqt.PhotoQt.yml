@@ -78,8 +78,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ebiggers/libdeflate
-          commit: 78051988f96dc8d8916310d8b24021f01bd9e102
-          tag: v1.23
+          commit: 96836d7d9d10e3e0d53e6edb54eb908514e336c4
+          tag: v1.24
     ########################
     - name: imath
       buildsystem: cmake-ninja
@@ -98,8 +98,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/openexr
-          commit: da760aa4b6bee4b9d74b8c6a151221b035fc47b7
-          tag: v3.3.3
+          commit: 7ec1cf59a0409d9d5c60ed111da9831890fa8296
+          tag: v3.3.4
 
     ########################
     # POPPLER DOCUMENTS
@@ -144,8 +144,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: 6dd9782d8391f112ef9743ba13614f1d858ce9f2
-          tag: poppler-25.05.0
+          commit: 04bd91684ed41d67ae0f10cde0660e4ed74ac203
+          tag: poppler-25.06.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -158,8 +158,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          commit: 1f820dc98d0a520c175433bcbb0098327d82aac6
-          tag: v6.13.0
+          commit: d3263ec15541584c211ce106db92486881e07172
+          tag: v6.15.0
     ########################
     - name: kimageformats
       buildsystem: cmake-ninja
@@ -172,8 +172,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/kimageformats.git
-          commit: 6f588c6fd3b4345e5d697b4a3b28e7ea70576ead
-          tag: v6.13.0
+          commit: 7420f47c17454de49dd617e35626704d09dbc757
+          tag: v6.15.0
 
     ########################
     # DEVIL IMAGE LIBRARY
@@ -245,16 +245,16 @@ modules:
       sources:
         - type: git
           url: https://github.com/haasn/libplacebo
-          commit: 1fd3c7bde7b943fe8985c893310b5269a09b46c5
-          tag: v7.349.0
+          commit: 3188549fba13bbdf3a5a98de2a38c2e71f04e21e
+          tag: v7.351.0
     ########################
     - name: libass
       buildsystem: autotools
       sources:
         - type: git
           url: https://github.com/libass/libass
-          commit: e46aedea0a0d17da4c4ef49d84b94a7994664ab5
-          tag: 0.17.3
+          commit: bbb3c7f1570a4a021e52683f3fbdf74fe492ae84
+          tag: 0.17.4
     ########################
     - name: libmpv
       buildsystem: meson
@@ -356,5 +356,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: d59cbf061eec93adc8b1ce611dbae9f5f6c851c5
-          tag: v4.9.1
+          commit: 920e3d1f52f7a8a819a4c51f0edf45d604ffe996
+          tag: v4.9.2
