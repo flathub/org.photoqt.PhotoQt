@@ -158,8 +158,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          commit: d3263ec15541584c211ce106db92486881e07172
-          tag: v6.15.0
+          commit: 972be57827edd88af97dc740eb55dd19ce1f85e8
+          tag: v6.17.0
     ########################
     - name: kimageformats
       buildsystem: cmake-ninja
