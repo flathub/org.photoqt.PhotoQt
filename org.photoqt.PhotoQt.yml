@@ -312,7 +312,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: 82572afc879b439cbf8c9c6f3a9ac7626adf98fb
+          commit: 147bc9c12ce8fbc1e94af5b5f6f0643ca410103a
           tag: 7.1.2-3
 
     ########################
