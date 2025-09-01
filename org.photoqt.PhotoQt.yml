@@ -49,8 +49,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/Exiv2/exiv2
-          commit: 907169fa643c2c74c14fd4106e55eaeee3634d9f
-          tag: v0.28.5
+          commit: afcb7a8ba84a7de36d2f1ee7689394e078697956
+          tag: v0.28.7
 
     ########################
     # RAW SUPPORT
@@ -88,8 +88,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/Imath
-          commit: c0396a055a01bc537d32f435aee11a9b7ed6f0b5
-          tag: v3.1.12
+          commit: fbcfb9833fe78277299080e8700fcf749a468bb0
+          tag: v3.2.1
     ########################
     - name: openexr
       buildsystem: cmake-ninja
@@ -98,8 +98,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/openexr
-          commit: 7ec1cf59a0409d9d5c60ed111da9831890fa8296
-          tag: v3.3.4
+          commit: 6661cb40c6fa8d332f142e660e25ac96675c15bd
+          tag: v3.3.5
 
     ########################
     # POPPLER DOCUMENTS
@@ -124,8 +124,8 @@ modules:
         - ./b2 install variant=release link=shared runtime-link=shared --prefix="$FLATPAK_DEST" -j $FLATPAK_BUILDER_N_JOBS
       sources:
         - type: archive
-          url: https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.gz
-          sha256: 3621533e820dcab1e8012afd583c0c73cf0f77694952b81352bf38c1488f9cb4
+          url: https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.gz
+          sha256: 9de758db755e8330a01d995b0a24d09798048400ac25c03fc5ea9be364b13c93
     ########################
     - name: poppler
       buildsystem: cmake-ninja
@@ -144,8 +144,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: 04bd91684ed41d67ae0f10cde0660e4ed74ac203
-          tag: poppler-25.06.0
+          commit: fd0b2b60e6f1321963bb3b7733457a3028fa4826
+          tag: poppler-25.08.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -172,8 +172,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/kimageformats.git
-          commit: 7420f47c17454de49dd617e35626704d09dbc757
-          tag: v6.15.0
+          commit: 972be57827edd88af97dc740eb55dd19ce1f85e8
+          tag: v6.17.0
 
     ########################
     # DEVIL IMAGE LIBRARY
@@ -230,8 +230,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/KhronosGroup/glslang
-          commit: fc9889c889561c5882e83819dcaffef5ed45529b
-          tag: 15.3.0
+          commit: 8a85691a0740d390761a1008b4696f57facd02c4
+          tag: 15.4.0
     ########################
     - name: libplacebo
       buildsystem: meson
@@ -313,7 +313,7 @@ modules:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
           commit: 82572afc879b439cbf8c9c6f3a9ac7626adf98fb
-          tag: 7.1.1-47
+          tag: 7.1.2-3
 
     ########################
     # ZXING-CPP
