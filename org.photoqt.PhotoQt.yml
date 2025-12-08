@@ -21,6 +21,7 @@ cleanup:
     - /share/doc
     - /share/man
     - '*.a'
+    - '*.la'
 modules:
     ########################
     # EXIV2
@@ -143,6 +144,8 @@ modules:
     ########################
     - name: extra-cmake-modules
       buildsystem: cmake-ninja
+      cleanup:
+        - '*'
       config-opts:
         - -DCMAKE_BUILD_TYPE=Release
         - -DBUILD_TESTING=OFF
