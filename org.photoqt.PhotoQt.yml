@@ -21,7 +21,6 @@ cleanup:
     - /share/doc
     - /share/man
     - '*.a'
-    - '*.la'
 modules:
     ########################
     # EXIV2
