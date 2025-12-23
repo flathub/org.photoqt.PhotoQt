@@ -349,7 +349,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 920e3d1f52f7a8a819a4c51f0edf45d604ffe996
-          tag: v4.9.2
-        - type: patch
-          path: patches/photoqt-appstream.patch
+          commit: 018525f41353855b3ccd673bbd256e8a450e56d0
+          tag: v5.0
