@@ -325,6 +325,32 @@ modules:
 
     ########################
     ########################
+    - name: photoqt-extensions
+      buildsystem: cmake-ninja
+      builddir: true
+      config-opts:
+        - -DWITH_IMAGEMAGICK=ON
+        - -DWITH_GRAPHICSMAGICK=OFF
+        - -DWITH_EXIV2=ON
+        - -DWITH_LIBARCHIVE=ON
+        - -DWITH_LIBRAW=ON
+        - -DWITH_POPPLER=ON
+        - -DWITH_QTPDF=OFF
+        - -DWITH_DEVIL=OFF
+        - -DWITH_FREEIMAGE=OFF
+        - -DWITH_PUGIXML=ON
+        - -DWITH_CHROMECAST=OFF
+        - -DWITH_LIBVIPS=OFF
+        - -DWITH_VIDEO_MPV=ON
+        - -DWITH_EXIV2_ENABLE_BMFF=ON
+        - -DWITH_ZXING=ON
+        - -DWITH_FLATPAKBUILD=ON
+        - -DWITH_WAYLANDSPECIFIC=ON
+      sources:
+        - type: git
+          url: https://gitlab.com/lspies/photoqt-extensions.git
+          commit: ded10bf473de519789e3efb2859efeda5697f20c
+          tag: v5.0
     - name: photoqt
       buildsystem: cmake-ninja
       builddir: true
