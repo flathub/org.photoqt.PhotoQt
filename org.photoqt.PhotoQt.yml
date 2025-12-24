@@ -323,8 +323,18 @@ modules:
           commit: d6068bcebeb8fd9f0d35a99b00d202be86a14dbe
           tag: v2.3.0
 
+
     ########################
+    # EXTENSIONS
     ########################
+    - name: yaml-cpp
+      buildsystem: cmake-ninja
+      builddir: true
+      sources:
+        - type: git
+          url: https://github.com/jbeder/yaml-cpp
+          commit: f7320141120f720aecc4c32be25586e7da9eb978
+          tag: 0.8.0
     - name: photoqt-extensions
       buildsystem: cmake-ninja
       builddir: true
@@ -351,6 +361,9 @@ modules:
           url: https://gitlab.com/lspies/photoqt-extensions.git
           commit: ded10bf473de519789e3efb2859efeda5697f20c
           tag: v5.0
+
+    ########################
+    ########################
     - name: photoqt
       buildsystem: cmake-ninja
       builddir: true
