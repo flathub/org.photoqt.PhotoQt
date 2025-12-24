@@ -372,6 +372,8 @@ modules:
         - -DWITH_ZXING=ON
         - -DWITH_FLATPAKBUILD=ON
         - -DWITH_WAYLANDSPECIFIC=ON
+        - -DWITH_EXTENSIONS_SUPPORT=ON
+        - -DWITH_INCLUDED_EXTENSIONS=OFF
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
