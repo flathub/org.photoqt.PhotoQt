@@ -337,6 +337,8 @@ modules:
           tag: 0.8.0
         - type: patch
           path: patches/yaml-cpp-fix-cmake-version.patch
+        - type: patch
+          path: patches/yaml-cpp-fix-uint16.patch
     - name: photoqt-extensions
       buildsystem: cmake-ninja
       builddir: true

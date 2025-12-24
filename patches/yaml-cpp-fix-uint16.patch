@@ -1,0 +1,319 @@
+diff --git a/src/binary.cpp b/src/binary.cpp
+index d27762a..0efaf92 100644
+--- a/src/binary.cpp
++++ b/src/binary.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/binary.h"
+ 
++#include <cstdint>
+ #include <cctype>
+ 
+ namespace YAML {
+diff --git a/src/convert.cpp b/src/convert.cpp
+index 9658b36..b10573b 100644
+--- a/src/convert.cpp
++++ b/src/convert.cpp
+@@ -1,5 +1,6 @@
+ #include <algorithm>
+ 
++#include <cstdint>
+ #include "yaml-cpp/node/convert.h"
+ 
+ namespace {
+diff --git a/src/depthguard.cpp b/src/depthguard.cpp
+index 5bf6cdf..9dffe01 100644
+--- a/src/depthguard.cpp
++++ b/src/depthguard.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/depthguard.h"
+ 
++#include <cstdint>
+ namespace YAML {
+ 
+ DeepRecursion::DeepRecursion(int depth, const Mark& mark_,
+diff --git a/src/directives.cpp b/src/directives.cpp
+index 4c1dc20..1fe1c20 100644
+--- a/src/directives.cpp
++++ b/src/directives.cpp
+@@ -1,5 +1,6 @@
+ #include "directives.h"
+ 
++#include <cstdint>
+ namespace YAML {
+ Directives::Directives() : version{true, 1, 2}, tags{} {}
+ 
+diff --git a/src/emit.cpp b/src/emit.cpp
+index b0efb84..ca476fb 100644
+--- a/src/emit.cpp
++++ b/src/emit.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/node/emit.h"
+ #include "nodeevents.h"
++#include <cstdint>
+ #include "yaml-cpp/emitfromevents.h"
+ #include "yaml-cpp/emitter.h"
+ 
+diff --git a/src/emitfromevents.cpp b/src/emitfromevents.cpp
+index 2e97187..9c6eadc 100644
+--- a/src/emitfromevents.cpp
++++ b/src/emitfromevents.cpp
+@@ -1,5 +1,6 @@
+ #include <cassert>
+ #include <sstream>
++#include <cstdint>
+ 
+ #include "yaml-cpp/emitfromevents.h"
+ #include "yaml-cpp/emitter.h"
+diff --git a/src/emitter.cpp b/src/emitter.cpp
+index 4d48307..0492199 100644
+--- a/src/emitter.cpp
++++ b/src/emitter.cpp
+@@ -1,5 +1,6 @@
+ #include <sstream>
+ 
++#include <cstdint>
+ #include "emitterutils.h"
+ #include "indentation.h"  // IWYU pragma: keep
+ #include "yaml-cpp/emitter.h"
+diff --git a/src/emitterstate.cpp b/src/emitterstate.cpp
+index 3dbe401..45b5352 100644
+--- a/src/emitterstate.cpp
++++ b/src/emitterstate.cpp
+@@ -1,5 +1,6 @@
+ #include <limits>
+ 
++#include <cstdint>
+ #include "emitterstate.h"
+ #include "yaml-cpp/exceptions.h"  // IWYU pragma: keep
+ 
+diff --git a/src/emitterutils.cpp b/src/emitterutils.cpp
+index 6cdf6de..810689f 100644
+--- a/src/emitterutils.cpp
++++ b/src/emitterutils.cpp
+@@ -1,5 +1,6 @@
+ #include <algorithm>
+ #include <iomanip>
++#include <cstdint>
+ #include <sstream>
+ 
+ #include "emitterutils.h"
+diff --git a/src/exceptions.cpp b/src/exceptions.cpp
+index 43a7976..0799494 100644
+--- a/src/exceptions.cpp
++++ b/src/exceptions.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/exceptions.h"
+ #include "yaml-cpp/noexcept.h"
++#include <cstdint>
+ 
+ namespace YAML {
+ 
+diff --git a/src/exp.cpp b/src/exp.cpp
+index 992620f..8c308fc 100644
+--- a/src/exp.cpp
++++ b/src/exp.cpp
+@@ -1,5 +1,6 @@
+ #include <sstream>
+ 
++#include <cstdint>
+ #include "exp.h"
+ #include "stream.h"
+ #include "yaml-cpp/exceptions.h"  // IWYU pragma: keep
+diff --git a/src/memory.cpp b/src/memory.cpp
+index 676e4c7..54ba9e3 100644
+--- a/src/memory.cpp
++++ b/src/memory.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/node/detail/memory.h"
+ #include "yaml-cpp/node/detail/node.h"  // IWYU pragma: keep
++#include <cstdint>
+ #include "yaml-cpp/node/ptr.h"
+ 
+ namespace YAML {
+diff --git a/src/node.cpp b/src/node.cpp
+index badc311..13b7a1b 100644
+--- a/src/node.cpp
++++ b/src/node.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/node/node.h"
+ #include "nodebuilder.h"
++#include <cstdint>
+ #include "nodeevents.h"
+ 
+ namespace YAML {
+diff --git a/src/node_data.cpp b/src/node_data.cpp
+index 8f5422a..a498cb2 100644
+--- a/src/node_data.cpp
++++ b/src/node_data.cpp
+@@ -1,5 +1,6 @@
+ #include <algorithm>
+ #include <cassert>
++#include <cstdint>
+ #include <iterator>
+ #include <sstream>
+ 
+diff --git a/src/nodebuilder.cpp b/src/nodebuilder.cpp
+index bbaefac..59d3e79 100644
+--- a/src/nodebuilder.cpp
++++ b/src/nodebuilder.cpp
+@@ -1,5 +1,6 @@
+ #include <cassert>
+ 
++#include <cstdint>
+ #include "nodebuilder.h"
+ #include "yaml-cpp/node/detail/node.h"
+ #include "yaml-cpp/node/impl.h"
+diff --git a/src/nodeevents.cpp b/src/nodeevents.cpp
+index b1774fe..bf93146 100644
+--- a/src/nodeevents.cpp
++++ b/src/nodeevents.cpp
+@@ -1,5 +1,6 @@
+ #include "nodeevents.h"
+ #include "yaml-cpp/eventhandler.h"
++#include <cstdint>
+ #include "yaml-cpp/mark.h"
+ #include "yaml-cpp/node/detail/node.h"
+ #include "yaml-cpp/node/detail/node_iterator.h"
+diff --git a/src/null.cpp b/src/null.cpp
+index db7daeb..7e2f9b3 100644
+--- a/src/null.cpp
++++ b/src/null.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/null.h"
+ 
++#include <cstdint>
+ namespace YAML {
+ _Null Null;
+ 
+diff --git a/src/ostream_wrapper.cpp b/src/ostream_wrapper.cpp
+index 047a9f7..c390ba0 100644
+--- a/src/ostream_wrapper.cpp
++++ b/src/ostream_wrapper.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/ostream_wrapper.h"
+ 
++#include <cstdint>
+ #include <algorithm>
+ #include <cstring>
+ #include <iostream>
+diff --git a/src/parse.cpp b/src/parse.cpp
+index 262536b..51569dd 100644
+--- a/src/parse.cpp
++++ b/src/parse.cpp
+@@ -1,5 +1,6 @@
+ #include "yaml-cpp/node/parse.h"
+ 
++#include <cstdint>
+ #include <fstream>
+ #include <sstream>
+ 
+diff --git a/src/parser.cpp b/src/parser.cpp
+index b8b78eb..01c4b07 100644
+--- a/src/parser.cpp
++++ b/src/parser.cpp
+@@ -1,5 +1,6 @@
+ #include <cstdio>
+ #include <sstream>
++#include <cstdint>
+ 
+ #include "directives.h"  // IWYU pragma: keep
+ #include "scanner.h"     // IWYU pragma: keep
+diff --git a/src/regex_yaml.cpp b/src/regex_yaml.cpp
+index bf1784b..9b76ea9 100644
+--- a/src/regex_yaml.cpp
++++ b/src/regex_yaml.cpp
+@@ -1,5 +1,6 @@
+ #include "regex_yaml.h"
+ 
++#include <cstdint>
+ namespace YAML {
+ // constructors
+ 
+diff --git a/src/scanner.cpp b/src/scanner.cpp
+index ea5511a..0584251 100644
+--- a/src/scanner.cpp
++++ b/src/scanner.cpp
+@@ -1,5 +1,6 @@
+ #include <cassert>
+ #include <memory>
++#include <cstdint>
+ 
+ #include "exp.h"
+ #include "scanner.h"
+diff --git a/src/scanscalar.cpp b/src/scanscalar.cpp
+index be57b1c..ae55c6c 100644
+--- a/src/scanscalar.cpp
++++ b/src/scanscalar.cpp
+@@ -1,5 +1,6 @@
+ #include "scanscalar.h"
+ 
++#include <cstdint>
+ #include <algorithm>
+ 
+ #include "exp.h"
+diff --git a/src/scantag.cpp b/src/scantag.cpp
+index 176cc5c..bde5c28 100644
+--- a/src/scantag.cpp
++++ b/src/scantag.cpp
+@@ -1,5 +1,6 @@
+ #include "exp.h"
+ #include "regex_yaml.h"
++#include <cstdint>
+ #include "regeximpl.h"
+ #include "stream.h"
+ #include "yaml-cpp/exceptions.h"  // IWYU pragma: keep
+diff --git a/src/scantoken.cpp b/src/scantoken.cpp
+index 1a94ab1..22c7233 100644
+--- a/src/scantoken.cpp
++++ b/src/scantoken.cpp
+@@ -1,5 +1,6 @@
+ #include <sstream>
+ 
++#include <cstdint>
+ #include "exp.h"
+ #include "regex_yaml.h"
+ #include "regeximpl.h"
+diff --git a/src/simplekey.cpp b/src/simplekey.cpp
+index 67c2d71..6c111b4 100644
+--- a/src/simplekey.cpp
++++ b/src/simplekey.cpp
+@@ -1,5 +1,6 @@
+ #include "scanner.h"
+ #include "token.h"
++#include <cstdint>
+ 
+ namespace YAML {
+ struct Mark;
+diff --git a/src/singledocparser.cpp b/src/singledocparser.cpp
+index 22913d1..bfb77db 100644
+--- a/src/singledocparser.cpp
++++ b/src/singledocparser.cpp
+@@ -1,5 +1,6 @@
+ #include <algorithm>
+ #include <cstdio>
++#include <cstdint>
+ #include <sstream>
+ 
+ #include "collectionstack.h"  // IWYU pragma: keep
+diff --git a/src/stream.cpp b/src/stream.cpp
+index b1aa092..4876782 100644
+--- a/src/stream.cpp
++++ b/src/stream.cpp
+@@ -1,5 +1,6 @@
+ #include <iostream>
+ 
++#include <cstdint>
+ #include "stream.h"
+ 
+ #ifndef YAML_PREFETCH_SIZE
+diff --git a/src/tag.cpp b/src/tag.cpp
+index 35a1b46..672b038 100644
+--- a/src/tag.cpp
++++ b/src/tag.cpp
+@@ -1,5 +1,6 @@
+ #include <cassert>
+ #include <stdexcept>
++#include <cstdint>
+ 
+ #include "directives.h"  // IWYU pragma: keep
+ #include "tag.h"
