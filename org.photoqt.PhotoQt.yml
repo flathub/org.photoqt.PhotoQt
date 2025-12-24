@@ -335,6 +335,8 @@ modules:
           url: https://github.com/jbeder/yaml-cpp
           commit: f7320141120f720aecc4c32be25586e7da9eb978
           tag: 0.8.0
+        - type: patch
+          path: patches/yaml-cpp-fix-cmake-version.patch
     - name: photoqt-extensions
       buildsystem: cmake-ninja
       builddir: true
