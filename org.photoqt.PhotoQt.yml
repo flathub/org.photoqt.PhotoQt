@@ -339,6 +339,17 @@ modules:
           path: patches/yaml-cpp-fix-cmake-version.patch
         - type: patch
           path: patches/yaml-cpp-fix-uint16.patch
+    - name: qca
+      buildsystem: cmake-ninja
+      builddir: true
+      config-opts:
+        - -DENABLE_TESTING=OFF
+        - -DBUILD_WITH_QT6=ON
+      sources:
+        - type: git
+          url: https://invent.kde.org/libraries/qca.git
+          commit: df5171e3c4baf346581f15af5a040e61b166a332
+          tag: v2.3.10
     - name: photoqt-extensions
       buildsystem: cmake-ninja
       builddir: true
@@ -346,20 +357,7 @@ modules:
         - -DWITH_IMAGEMAGICK=ON
         - -DWITH_GRAPHICSMAGICK=OFF
         - -DWITH_EXIV2=ON
-        - -DWITH_LIBARCHIVE=ON
-        - -DWITH_LIBRAW=ON
-        - -DWITH_POPPLER=ON
-        - -DWITH_QTPDF=OFF
-        - -DWITH_DEVIL=OFF
-        - -DWITH_FREEIMAGE=OFF
-        - -DWITH_PUGIXML=ON
-        - -DWITH_CHROMECAST=OFF
-        - -DWITH_LIBVIPS=OFF
-        - -DWITH_VIDEO_MPV=ON
-        - -DWITH_EXIV2_ENABLE_BMFF=ON
-        - -DWITH_ZXING=ON
-        - -DWITH_FLATPAKBUILD=ON
-        - -DWITH_WAYLANDSPECIFIC=ON
+        - -DCMAKE_INSTALL_PREFIX=/app/lib/PhotoQt/extensions
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt-extensions.git
