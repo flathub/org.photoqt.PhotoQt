@@ -360,7 +360,7 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt-extensions.git
-          commit:
+          commit: 926f951b61083d1bc78c38664e1498b251f6d16c
           tag: v5.1
 
     ########################
@@ -391,5 +391,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit:
+          commit: 43166e86df24ec460d83f2b573e86044e75bf29e
           tag: v5.1
