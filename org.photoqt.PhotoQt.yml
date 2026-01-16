@@ -53,8 +53,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/LibRaw/LibRaw
-          commit: 9646d776c7c61976080a8f2be67928df0750493e
-          tag: 0.21.4
+          commit: 0b56545a4f828743f28a4345cdfdd4c49f9f9a2a
+          tag: 0.22.0
         - type: shell
           commands:
             - "autoreconf -vfi"
@@ -90,8 +90,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/aous72/OpenJPH
-          commit: 762528c09981f6e9a4c6863fb15fcb5ce42736e5
-          tag: 0.25.3
+          commit: 4d4f4e8b7f00d877d6a615a991b48ad08a640990
+          tag: 0.26.0
     ########################
     - name: openexr
       buildsystem: cmake-ninja
@@ -146,8 +146,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: 45d43f4685d0596abcecd2587d4b821e8e40879b
-          tag: poppler-25.12.0
+          commit: d3c0e9ca648efbca25a32741ebef9386afc53d1d
+          tag: poppler-26.01.0
 
     ########################
     # KDE IMAGE FORMATS
@@ -162,8 +162,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          commit: f8447eb308c27724be2bcd3a0e8c2f4bd5d9f52f
-          tag: v6.21.0
+          commit: 3f76d71045e935ced4723c12345162f16cc8cb21
+          tag: v6.22.0
     ########################
     - name: kimageformats
       buildsystem: cmake-ninja
@@ -176,22 +176,8 @@ modules:
       sources:
         - type: git
           url: https://invent.kde.org/frameworks/kimageformats.git
-          commit: 237f25fd20b234d6b8c267b1dae6f85c70ba872e
-          tag: v6.21.0
-
-    ########################
-    # XML SUPPORT
-    ########################
-    - name: pugixml
-      buildsystem: cmake-ninja
-      builddir: true
-      config-opts:
-        - -DCMAKE_BUILD_TYPE=Release
-      sources:
-        - type: git
-          url: https://github.com/zeux/pugixml
-          commit: ee86beb30e4973f5feffe3ce63bfa4fbadf72f38
-          tag: v1.15
+          commit: 19df8b03a86b24f85c42f1abcef95cb3c0f85c9b
+          tag: v6.22.0
 
     ########################
     # ffmpegthumbnailer
@@ -260,8 +246,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/mpv-player/mpv
-          commit: e48ac7ce08462f5e33af6ef9deeac6fa87eef01e
-          tag: v0.40.0
+          commit: 41f6a645068483470267271e1d09966ca3b9f413
+          tag: v0.41.0
 
     ########################
     # MAGICK HAPPENS HERE
@@ -305,8 +291,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: 578d60d1bf77be54b16ef2673d507932885570dd
-          tag: 7.1.2-11
+          commit: bdd4fa561d7bf4c6afd40ee9c89e9f9e82b6e88b
+          tag: 7.1.2-12
 
     ########################
     # ZXING-CPP
@@ -322,6 +308,19 @@ modules:
           url: https://github.com/zxing-cpp/zxing-cpp
           commit: d6068bcebeb8fd9f0d35a99b00d202be86a14dbe
           tag: v2.3.0
+
+    ########################
+    # LIBSAI
+    ########################
+    - name: libsai
+      buildsystem: cmake-ninja
+      config-opts:
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DBUILD_SHARED_LIBS=ON
+      sources:
+        - type: git
+          url: https://github.com/Wunkolo/libsai
+          commit: df66c163b92466e650f17eb3a870670e04f5b264
 
 
     ########################
@@ -361,8 +360,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt-extensions.git
-          commit: ded10bf473de519789e3efb2859efeda5697f20c
-          tag: v5.0
+          commit:
+          tag: v5.1
 
     ########################
     ########################
@@ -379,7 +378,7 @@ modules:
         - -DWITH_QTPDF=OFF
         - -DWITH_DEVIL=OFF
         - -DWITH_FREEIMAGE=OFF
-        - -DWITH_PUGIXML=ON
+        - -DWITH_PUGIXML=OFF
         - -DWITH_CHROMECAST=OFF
         - -DWITH_LIBVIPS=OFF
         - -DWITH_VIDEO_MPV=ON
@@ -388,11 +387,9 @@ modules:
         - -DWITH_FLATPAKBUILD=ON
         - -DWITH_WAYLANDSPECIFIC=ON
         - -DWITH_EXTENSIONS_SUPPORT=ON
-        - -DWITH_INCLUDED_EXTENSIONS=OFF
+        - -DWITH_LIBSAI=ON
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 018525f41353855b3ccd673bbd256e8a450e56d0
-          tag: v5.0
-        - type: patch
-          path: patches/photoqt-appstream.patch
+          commit:
+          tag: v5.1
