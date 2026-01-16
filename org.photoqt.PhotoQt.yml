@@ -293,6 +293,8 @@ modules:
           url: https://github.com/ImageMagick/ImageMagick
           commit: bdd4fa561d7bf4c6afd40ee9c89e9f9e82b6e88b
           tag: 7.1.2-12
+        - type: patch
+          path: patches/imagemagick_7.1.2-12.patch
 
     ########################
     # ZXING-CPP
