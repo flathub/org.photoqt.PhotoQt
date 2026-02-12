@@ -20,6 +20,7 @@ cleanup:
     - /share/boost_predef
     - /share/doc
     - /share/man
+    - '*.la'
     - '*.a'
 modules:
     ########################
