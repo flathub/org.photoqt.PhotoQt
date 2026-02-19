@@ -150,36 +150,6 @@ modules:
           tag: poppler-26.01.0
 
     ########################
-    # KDE IMAGE FORMATS
-    ########################
-    - name: extra-cmake-modules
-      buildsystem: cmake-ninja
-      cleanup:
-        - '*'
-      config-opts:
-        - -DCMAKE_BUILD_TYPE=Release
-        - -DBUILD_TESTING=OFF
-      sources:
-        - type: git
-          url: https://invent.kde.org/frameworks/extra-cmake-modules.git
-          commit: 3f76d71045e935ced4723c12345162f16cc8cb21
-          tag: v6.22.0
-    ########################
-    - name: kimageformats
-      buildsystem: cmake-ninja
-      builddir: true
-      config-opts:
-        - -DCMAKE_BUILD_TYPE=Release
-        - -DBUILD_TESTING=OFF
-        - -DKIMAGEFORMATS_HEIF=ON
-        - -DKIMAGEFORMATS_JXL=ON
-      sources:
-        - type: git
-          url: https://invent.kde.org/frameworks/kimageformats.git
-          commit: 19df8b03a86b24f85c42f1abcef95cb3c0f85c9b
-          tag: v6.22.0
-
-    ########################
     # ffmpegthumbnailer
     ########################
     - name: ffmpegthumbnailer
