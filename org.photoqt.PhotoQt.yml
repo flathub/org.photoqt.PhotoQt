@@ -265,12 +265,22 @@ modules:
     ########################
     # ZXING-CPP
     ########################
+    - name: stb
+      build: simple
+      build-commands:
+        - mkdir /usr/include/stb
+        - cp *.h /usr/include/stb
+      sources:
+        - type: git
+          url: https://github.com/nothings/stb
+          commit: f1c79c02822848a9bed4315b12c8c8f3761e1296
     - name: zxing-cpp
       buildsystem: cmake-ninja
       config-opts:
         - -DCMAKE_BUILD_TYPE=Release
         - -DBUILD_WRITERS=OFF
         - -DBUILD_EXAMPLES=OFF
+        - -DSTB_IMAGE_INCLUDE_DIR=/usr/include/stb/
       sources:
         - type: git
           url: https://github.com/zxing-cpp/zxing-cpp
