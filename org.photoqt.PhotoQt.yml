@@ -266,7 +266,7 @@ modules:
     # ZXING-CPP
     ########################
     - name: stb
-      build: simple
+      buildsystem: simple
       build-commands:
         - mkdir /usr/include/stb
         - cp *.h /usr/include/stb
