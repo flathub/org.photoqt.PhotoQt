@@ -90,8 +90,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/aous72/OpenJPH
-          commit: 4d4f4e8b7f00d877d6a615a991b48ad08a640990
-          tag: 0.26.0
+          commit: cb6592af91fc1332d5381288c1b885372926c447
+          tag: 0.26.3
     ########################
     - name: openexr
       buildsystem: cmake-ninja
@@ -146,8 +146,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: d3c0e9ca648efbca25a32741ebef9386afc53d1d
-          tag: poppler-26.01.0
+          commit: 30927d02c1fd6dc02aae2e32334bb82315b24cbb
+          tag: poppler-26.02.0
 
     ########################
     # ffmpegthumbnailer
@@ -175,8 +175,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/KhronosGroup/glslang
-          commit: b5782e52ee2f7b3e40bb9c80d15b47016e008bc9
-          tag: 16.1.0
+          commit: f0bd0257c308b9a26562c1a30c4748a0219cc951
+          tag: 16.2.0
     ########################
     - name: libplacebo
       buildsystem: meson
@@ -190,8 +190,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/haasn/libplacebo
-          commit: 3188549fba13bbdf3a5a98de2a38c2e71f04e21e
-          tag: v7.351.0
+          commit: b2ea27dceb6418aabfe9121174c6dbb232942998
+          tag: v7.360.0
         - type: patch
           path: patches/libplacebo-python-fix.patch
     ########################
@@ -261,10 +261,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: bdd4fa561d7bf4c6afd40ee9c89e9f9e82b6e88b
-          tag: 7.1.2-12
-        - type: patch
-          path: patches/imagemagick_7.1.2-12.patch
+          commit: dd991e286b96918917a3392d6dc3ffc0e6907a4e
+          tag: 7.1.2-13
 
     ########################
     # ZXING-CPP
@@ -278,8 +276,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/zxing-cpp/zxing-cpp
-          commit: d6068bcebeb8fd9f0d35a99b00d202be86a14dbe
-          tag: v2.3.0
+          commit: 8dd1cf5c4fd6fb6211bb96713db926ac6f2cf825
+          tag: v3.0.2
 
     ########################
     # LIBSAI
@@ -304,10 +302,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/jbeder/yaml-cpp
-          commit: f7320141120f720aecc4c32be25586e7da9eb978
-          tag: 0.8.0
-        - type: patch
-          path: patches/yaml-cpp-fix-cmake-version.patch
+          commit: 56e3bb550c91fd7005566f19c079cb7a503223cf
+          tag: yaml-cpp-0.9.0
         - type: patch
           path: patches/yaml-cpp-fix-uint16.patch
     - name: qca
@@ -332,8 +328,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt-extensions.git
-          commit: 926f951b61083d1bc78c38664e1498b251f6d16c
-          tag: v5.1
+          commit: eda10f979029e4589fdbce141cfa1e8e78e3504f
+          tag: v5.2
 
     ########################
     ########################
@@ -349,7 +345,6 @@ modules:
         - -DWITH_POPPLER=ON
         - -DWITH_QTPDF=OFF
         - -DWITH_DEVIL=OFF
-        - -DWITH_FREEIMAGE=OFF
         - -DWITH_PUGIXML=OFF
         - -DWITH_CHROMECAST=OFF
         - -DWITH_LIBVIPS=OFF
@@ -363,5 +358,5 @@ modules:
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 43166e86df24ec460d83f2b573e86044e75bf29e
-          tag: v5.1
+          commit: f3ea202a2f6202df8532d2a405ebc182af220218
+          tag: v5.2
