@@ -284,17 +284,6 @@ index 67c2d71..6c111b4 100644
  
  namespace YAML {
  struct Mark;
-diff --git a/src/singledocparser.cpp b/src/singledocparser.cpp
-index 22913d1..bfb77db 100644
---- a/src/singledocparser.cpp
-+++ b/src/singledocparser.cpp
-@@ -1,5 +1,6 @@
- #include <algorithm>
- #include <cstdio>
-+#include <cstdint>
- #include <sstream>
- 
- #include "collectionstack.h"  // IWYU pragma: keep
 diff --git a/src/stream.cpp b/src/stream.cpp
 index b1aa092..4876782 100644
 --- a/src/stream.cpp

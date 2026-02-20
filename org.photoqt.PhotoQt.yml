@@ -268,8 +268,8 @@ modules:
     - name: stb
       buildsystem: simple
       build-commands:
-        - mkdir /usr/include/stb
-        - cp *.h /usr/include/stb
+        - mkdir /app/include/stb
+        - cp *.h /app/include/stb
       sources:
         - type: git
           url: https://github.com/nothings/stb
@@ -278,14 +278,16 @@ modules:
       buildsystem: cmake-ninja
       config-opts:
         - -DCMAKE_BUILD_TYPE=Release
-        - -DBUILD_WRITERS=OFF
-        - -DBUILD_EXAMPLES=OFF
-        - -DSTB_IMAGE_INCLUDE_DIR=/usr/include/stb/
+        - -DZXING_WRITERS=OFF
+        - -DZXING_EXAMPLES=OFF
+        - -DSTB_IMAGE_INCLUDE_DIR=/app/include/stb/
       sources:
         - type: git
           url: https://github.com/zxing-cpp/zxing-cpp
           commit: 8dd1cf5c4fd6fb6211bb96713db926ac6f2cf825
           tag: v3.0.2
+        - type: patch
+          path: patches/zxing-cmake.patch
 
     ########################
     # LIBSAI
