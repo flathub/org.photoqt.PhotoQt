@@ -100,8 +100,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/openexr
-          commit: 741ecb82ccdb291ce5b04713fc6c03208753575e
-          tag: v3.4.4
+          commit: d19b2c3c0bc884a2837e2a60b1caa23dcb5b3296
+          tag: v3.4.5
 
     ########################
     # POPPLER DOCUMENTS
@@ -259,8 +259,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: dd991e286b96918917a3392d6dc3ffc0e6907a4e
-          tag: 7.1.2-13
+          commit: b5fdb90dac0e6d0bf1bbd95704bbd60216a5bc23
+          tag: 7.1.2-15
 
     ########################
     # ZXING-CPP
