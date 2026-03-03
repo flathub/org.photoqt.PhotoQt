@@ -370,3 +370,5 @@ modules:
           url: https://gitlab.com/lspies/photoqt.git
           commit: f3ea202a2f6202df8532d2a405ebc182af220218
           tag: v5.2
+        - type: patch
+          path: patches/photoqt-thumbnail-hide-fix.patch
