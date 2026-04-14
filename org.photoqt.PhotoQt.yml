@@ -40,8 +40,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/Exiv2/exiv2
-          commit: afcb7a8ba84a7de36d2f1ee7689394e078697956
-          tag: v0.28.7
+          commit: 2cd987a731236037b6b78cbff897d08685a8ef49
+          tag: v0.28.8
 
     ########################
     # RAW SUPPORT
@@ -53,8 +53,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/LibRaw/LibRaw
-          commit: 0b56545a4f828743f28a4345cdfdd4c49f9f9a2a
-          tag: 0.22.0
+          commit: b860248a89d9082b8e0a1e202e516f46af9adb29
+          tag: 0.22.1
         - type: shell
           commands:
             - "autoreconf -vfi"
@@ -90,8 +90,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/aous72/OpenJPH
-          commit: cb6592af91fc1332d5381288c1b885372926c447
-          tag: 0.26.3
+          commit: c3a6d8eb28b04393260c8778fc88bac653e449a0
+          tag: 0.27.0
     ########################
     - name: openexr
       buildsystem: cmake-ninja
@@ -100,8 +100,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/openexr
-          commit: d19b2c3c0bc884a2837e2a60b1caa23dcb5b3296
-          tag: v3.4.5
+          commit: b5fa98ac6b5fc660c0295123c1d02bbf687dbec3
+          tag: v3.4.9
 
     ########################
     # POPPLER DOCUMENTS
@@ -146,8 +146,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: 30927d02c1fd6dc02aae2e32334bb82315b24cbb
-          tag: poppler-26.02.0
+          commit: b3a22fbfc627409044959a11a2c51afc555ac718
+          tag: poppler-26.04.0
 
     ########################
     # ffmpegthumbnailer
@@ -190,8 +190,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/haasn/libplacebo
-          commit: b2ea27dceb6418aabfe9121174c6dbb232942998
-          tag: v7.360.0
+          commit: cee9b076f2c63104ccfd497fa79c39a867293ec4
+          tag: v7.360.1
     ########################
     - name: libass
       buildsystem: autotools
@@ -228,8 +228,8 @@ modules:
         - --disable-static
       sources:
         - type: archive
-          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.gz
-          sha256: 5bd6da34794928cc7e616f288e32bd0be7f9a5ca2d3c206a0af2c19a4e3a318f
+          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10070/ghostscript-10.07.0.tar.gz
+          sha256: ed6ea62022e3f4d5a6569b6efc9361b63a6d118bfcad8f0beb897c37885b5cad
     ########################
     - name: imagemagick
       builddir: true
@@ -259,8 +259,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: b5fdb90dac0e6d0bf1bbd95704bbd60216a5bc23
-          tag: 7.1.2-15
+          commit: 9fbd2b79450e930edb95e8158d412e57a7b27e83
+          tag: 7.1.2-19
 
     ########################
     # ZXING-CPP
@@ -273,7 +273,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/nothings/stb
-          commit: f1c79c02822848a9bed4315b12c8c8f3761e1296
+          commit: 28d546d5eb77d4585506a20480f4de2e706dff4c
     - name: zxing-cpp
       buildsystem: cmake-ninja
       config-opts:
@@ -300,7 +300,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/Wunkolo/libsai
-          commit: df66c163b92466e650f17eb3a870670e04f5b264
+          commit: f8eae5189ac20c0cf41922b8cca726ff3e05ef39
 
 
     ########################
