@@ -300,7 +300,7 @@ modules:
       sources:
         - type: git
           url: https://github.com/Wunkolo/libsai
-          commit: f8eae5189ac20c0cf41922b8cca726ff3e05ef39
+          commit: df66c163b92466e650f17eb3a870670e04f5b264
 
 
     ########################
