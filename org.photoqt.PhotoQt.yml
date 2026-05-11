@@ -289,19 +289,6 @@ modules:
         - type: patch
           path: patches/zxing-cmake.patch
 
-    ########################
-    # LIBSAI
-    ########################
-    - name: libsai
-      buildsystem: cmake-ninja
-      config-opts:
-        - -DCMAKE_BUILD_TYPE=Release
-        - -DBUILD_SHARED_LIBS=ON
-      sources:
-        - type: git
-          url: https://github.com/Wunkolo/libsai
-          commit: ecd0762f6262a5ecf3dbee5d893b550fa17e8a76
-
 
     ########################
     # EXTENSIONS
@@ -364,7 +351,7 @@ modules:
         - -DWITH_FLATPAKBUILD=ON
         - -DWITH_WAYLANDSPECIFIC=ON
         - -DWITH_EXTENSIONS_SUPPORT=ON
-        - -DWITH_LIBSAI=ON
+        - -DWITH_LIBSAI=OFF
         - -DWITH_FFMPEGTHUMBNAILER=ON
       sources:
         - type: git
