@@ -354,6 +354,7 @@ modules:
         - -DWITH_EXTENSIONS_SUPPORT=ON
         - -DWITH_LIBSAI=OFF
         - -DWITH_FFMPEGTHUMBNAILER=ON
+        - -DWITH_EXTENSIONS_LIBRARY_VERIFICATION=OFF
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
