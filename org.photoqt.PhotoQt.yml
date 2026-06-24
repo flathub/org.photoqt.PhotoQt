@@ -91,7 +91,7 @@ modules:
         - type: git
           url: https://github.com/aous72/OpenJPH
           commit: 1ce857c7f14dd78dd8f4bdfabe43dc17f8408a42
-          tag: 0.30 .1
+          tag: 0.30.1
     ########################
     - name: openexr
       buildsystem: cmake-ninja
