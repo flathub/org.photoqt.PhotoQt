@@ -90,8 +90,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/aous72/OpenJPH
-          commit: a037ba4f386828d8e574fda0d5bba2b778df48ce
-          tag: 0.27.2
+          commit: 1ce857c7f14dd78dd8f4bdfabe43dc17f8408a42
+          tag: 0.30.1
     ########################
     - name: openexr
       buildsystem: cmake-ninja
@@ -100,8 +100,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/AcademySoftwareFoundation/openexr
-          commit: d25e2a83b5a5f0eb9e350de8218fa27c348da203
-          tag: v3.4.11
+          commit: c1194b2cb23a1bdf76fe5e756b22e8436b9a98c9
+          tag: v3.4.13
 
     ########################
     # POPPLER DOCUMENTS
@@ -146,8 +146,8 @@ modules:
       sources:
         - type: git
           url: https://gitlab.freedesktop.org/poppler/poppler
-          commit: b0091f08803ffe7784e365db45abd003159bf45d
-          tag: poppler-26.05.0
+          commit: 1fe40984214a729350da11950fc7f09343247202
+          tag: poppler-26.06.0
 
     ########################
     # ffmpegthumbnailer
@@ -198,8 +198,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/libass/libass
-          commit: bbb3c7f1570a4a021e52683f3fbdf74fe492ae84
-          tag: 0.17.4
+          commit: 4a05d8127f525943ebf45fdc6497c9e665947f0d
+          tag: 0.17.5
     ########################
     - name: libmpv
       buildsystem: meson
@@ -228,8 +228,8 @@ modules:
         - --disable-static
       sources:
         - type: archive
-          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10070/ghostscript-10.07.0.tar.gz
-          sha256: ed6ea62022e3f4d5a6569b6efc9361b63a6d118bfcad8f0beb897c37885b5cad
+          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostscript-10.07.1.tar.gz
+          sha256: 2fc74362f9be6fae1b0a65d38fdcfd4f0b518cc3b07c5581fb661eb4d2e15251
     ########################
     - name: imagemagick
       builddir: true
@@ -259,8 +259,8 @@ modules:
       sources:
         - type: git
           url: https://github.com/ImageMagick/ImageMagick
-          commit: c86de049cefb8dd739e16f0e2fdc1ef8d2006d59
-          tag: 7.1.2-21
+          commit: 38ba210c5e5a660013d632a3d33c431e658befcc
+          tag: 7.1.2-26
 
     ########################
     # ZXING-CPP
@@ -303,31 +303,18 @@ modules:
           tag: yaml-cpp-0.9.0
         - type: patch
           path: patches/yaml-cpp-fix-uint16.patch
-    - name: qca
-      buildsystem: cmake-ninja
-      builddir: true
-      config-opts:
-        - -DENABLE_TESTING=OFF
-        - -DBUILD_WITH_QT6=ON
-      sources:
-        - type: git
-          url: https://invent.kde.org/libraries/qca.git
-          commit: df5171e3c4baf346581f15af5a040e61b166a332
-          tag: v2.3.10
     - name: photoqt-extensions
       buildsystem: cmake-ninja
       builddir: true
       config-opts:
-        - -DWITH_IMAGEMAGICK=ON
-        - -DWITH_GRAPHICSMAGICK=OFF
         - -DWITH_EXIV2=ON
         - -DCMAKE_INSTALL_PREFIX=/app/lib/PhotoQt/extensions
         - -DINSTALL_INTO_LIB_SUBDIR=OFF
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt-extensions.git
-          commit: 7172061b45b598e38667f999734c92ab33e4c45a
-          tag: v5.3
+          commit: 83ed295fa28e2a6983ec1863563b962aea8b576e
+          tag: v5.4
 
     ########################
     ########################
@@ -354,9 +341,8 @@ modules:
         - -DWITH_EXTENSIONS_SUPPORT=ON
         - -DWITH_LIBSAI=OFF
         - -DWITH_FFMPEGTHUMBNAILER=ON
-        - -DWITH_EXTENSIONS_LIBRARY_VERIFICATION=OFF
       sources:
         - type: git
           url: https://gitlab.com/lspies/photoqt.git
-          commit: 08dc865d41285b60b1af47d835c2fc79d640aecc
-          tag: v5.3
+          commit: 10c6a2ed3298a0e5c3f711a41bd6d57ee51e2ae3
+          tag: v5.4
