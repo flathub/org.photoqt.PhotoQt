@@ -274,6 +274,15 @@ modules:
         - type: git
           url: https://github.com/nothings/stb
           commit: 31c1ad37456438565541f4919958214b6e762fb4
+    - name: zint
+      buildsystem: cmake
+      config-opts:
+        - -DZINT_QT6=ON
+      sources:
+        - type: git
+          url: https://github.com/zint/zint
+          commit: 55541e139e62b9209b71cd9b0ba9010cec28b1d9
+          tag: 2.16.0
     - name: zxing-cpp
       buildsystem: cmake-ninja
       config-opts:
@@ -281,6 +290,7 @@ modules:
         - -DZXING_WRITERS=OFF
         - -DZXING_EXAMPLES=OFF
         - -DSTB_IMAGE_INCLUDE_DIR=/app/include/stb/
+        - -DZXING_USE_BUNDLED_ZINT=OFF
       sources:
         - type: git
           url: https://github.com/zxing-cpp/zxing-cpp
